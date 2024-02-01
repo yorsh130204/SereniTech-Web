@@ -4,10 +4,21 @@ SereniApp-Web is a web application developed to improve the safety and well-bein
 
 ## Features
 
-- 3D-printed bracelet for monitoring.
-- Mobile and web platform developed with React.
-- Real-time information for caregivers.
-- Tailored responses to critical situations.
+- Monitoring Bracelet:
+  - A specialized bracelet equipped with monitoring sensors.
+  - Designed for real-time data collection, including pulse and location.
+
+- Web Platform Developed with React + Next.js:
+  - Responsive and user-friendly web interface.
+  - Built using React and Next.js for efficient development and performance.
+
+- Historical Information for Caregivers:
+  - Provides access to historical monitoring data.
+  - Allows caregivers to review past data for a comprehensive understanding.
+
+- Historical Pulse Information:
+  - Tracks and displays historical pulse data.
+  - Visualization of pulse trends and patterns over time.
 
 ## Technologies Used
 
