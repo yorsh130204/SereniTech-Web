@@ -1,1 +1,6 @@
-{"/_app":"pages/_app.js","/_error":"pages/_error.js","/_document":"pages/_document.js","/api/hello":"pages/api/hello.js","/en/404":"pages/en/404.html","/en/500":"pages/en/500.html","/en":"pages/en.html"}
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/": "pages/index.js"
+}
