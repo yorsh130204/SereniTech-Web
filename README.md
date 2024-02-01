@@ -1,6 +1,6 @@
 # SereniApp-Web
 
-SereniApp-Web is a web application developed to improve the safety and well-being of individuals with Autism Spectrum Disorder (ASD) through a comprehensive approach. The project focuses on a monitoring device, consisting of a 3D-printed bracelet, accompanied by a mobile and web platform developed with React. The solution provides a proactive system that enables caregivers to receive real-time information and provide tailored responses to critical situations.
+SereniApp-Web is a web application developed to improve the safety and well-being of individuals with Autism Spectrum Disorder (ASD) through a comprehensive approach. The project focuses on a monitoring device, consisting of a bracelet, accompanied by a  web platform developed with React + Next.js. The solution provides a proactive system that enables caregivers to receive historical information and provide tailored responses to critical situations.
 
 ## Features
 
