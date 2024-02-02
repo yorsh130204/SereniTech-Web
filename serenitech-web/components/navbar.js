@@ -5,9 +5,9 @@ import { Disclosure } from "@headlessui/react";
 
 const Navbar = () => {
   const navigation = [
-    "SereniBand",
+    "SereniTech-Band",
     "Acerca de nosotros",
-    "Contacto",
+    "Testimonios",
     "FAQ",
   ];
 

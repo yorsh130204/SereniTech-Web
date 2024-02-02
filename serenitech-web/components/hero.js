@@ -12,9 +12,10 @@ const Hero = () => {
               SereniApp
             </h1>
             <p className="py-5 text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300">
-              SereniApp es una aplicación enfocada al
-              cuidado de la salud de las personas con TEA.
-              NO ES LO QUE DIRÁ PERO COMO APOYO.
+              SereniApp es tu asistente personalizado en el cuidado de tus seres queridos con TEA.
+              A través de avanzadas alertas y un monitoreo en tiempo real, podrás estar al tanto de su
+              bienestar donde sea que estén, dándote la capacidad de responder ante cualquier
+              situación para su mayor seguridad.
             </p>
 
             <div className="flex flex-col items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row">
