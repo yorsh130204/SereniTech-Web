@@ -19,7 +19,7 @@ const Home = () => {
         <title>SereniApp</title>
         <meta
           name="description"
-          content="Nextly is a free landing page template built with next.js & Tailwind CSS"
+          content="SereniApp es tu asistente personalizado en el cuidado de tus seres queridos con TEA."
         />
         <link rel="icon" href="/serenitech-web/public/favicon.png" />
       </Head>
@@ -27,8 +27,8 @@ const Home = () => {
       <Navbar />
       <Hero />
       <SectionTitle
-        pretitle="Nextly Benefits"
-        title=" Why should you use this landing page">
+        pretitle="Beneficios de SereniApp"
+        title="¿Por qué comenzar a utilizarlo?">
         Nextly is a free landing page & marketing website template for startups
         and indie projects. Its built with Next.js & TailwindCSS. And its
         completely open-source.
@@ -36,16 +36,16 @@ const Home = () => {
       <Benefits data={benefitOne} />
       <Benefits imgPos="right" data={benefitTwo} />
       <SectionTitle
-        pretitle="Watch a video"
-        title="Learn how to fullfil your needs">
+        pretitle="Mira un video demostrativo"
+        title="Aprende cómo funciona">
         This section is to highlight a promo or demo video of your product.
         Analysts says a landing page with video has 3% more conversion rate. So,
         don&apos;t forget to add one. Just like this.
       </SectionTitle>
       <Video />
       <SectionTitle
-        pretitle="Testimonials"
-        title="Here's what our customers said">
+        pretitle="Testimonios"
+        title="Opiniones de usuarios de SereniApp">
         Testimonails is a great way to increase the brand trust and awareness.
         Use this section to highlight your popular customers.
       </SectionTitle>
