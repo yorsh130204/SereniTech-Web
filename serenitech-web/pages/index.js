@@ -21,20 +21,24 @@ const Home = () => {
           name="description"
           content="SereniApp es tu asistente personalizado en el cuidado de tus seres queridos con TEA."
         />
-        <link rel="icon" href="/serenitech-web/public/favicon.png" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
-
+      
       <Navbar />
       <Hero />
-      <SectionTitle
+      
+      <div id="serenitech-band"></div>
+      <SectionTitle 
         pretitle="Beneficios de SereniApp"
         title="¿Por qué comenzar a utilizarlo?">
-        Nextly is a free landing page & marketing website template for startups
-        and indie projects. Its built with Next.js & TailwindCSS. And its
-        completely open-source.
+        SereniTech-Band, la solución integral para el monitoreo de personas con TEA,
+        mejora seguridad y autonomía. Con su interfaz intuitiva y tecnología innovadora,
+        ofrece un apoyo esencial para el bienestar de las personas con TEA y sus cuidadores.
       </SectionTitle>
       <Benefits data={benefitOne} />
       <Benefits imgPos="right" data={benefitTwo} />
+
+      <div id="acerca-de-nosotros"></div>
       <SectionTitle
         pretitle="Mira un video demostrativo"
         title="Aprende cómo funciona">
@@ -43,6 +47,8 @@ const Home = () => {
         don&apos;t forget to add one. Just like this.
       </SectionTitle>
       <Video />
+
+      <div id="testimonios"></div>
       <SectionTitle
         pretitle="Testimonios"
         title="Opiniones de usuarios de SereniApp">
@@ -50,6 +56,8 @@ const Home = () => {
         Use this section to highlight your popular customers.
       </SectionTitle>
       <Testimonials />
+
+      <div id="faq"></div>
       <SectionTitle pretitle="FAQ" title="Frequently Asked Questions">
         Answer your customers possible questions here, it will increase the
         conversion rate as well as support or chat requests.
