@@ -7,7 +7,7 @@ const Navbar = () => {
   const navigation = [
     "SereniTech-Band",
     "Acerca de nosotros",
-    "Video sobre Autismo",
+    "Video sobre el TEA",
     "Testimonios",
     "FAQ",
   ];
@@ -64,7 +64,7 @@ const Navbar = () => {
                         {item}
                       </Link>
                     ))}
-                    <Link href="/serenitech-web/components/login.js" className="w-full px-6 py-2 mt-3 text-center text-white bg-[#0b4b7d] rounded-md lg:ml-5">
+                    <Link href="/serenitech-web/components/login.js" className="w-50% px-6 py-2 mt-3 text-center text-white bg-[#0b4b7d] rounded-md lg:ml-5 hover:bg-[#1690c7]">
                       Inicia sesión
                     </Link>
                   </>
@@ -88,7 +88,7 @@ const Navbar = () => {
         </div>
 
         <div className="hidden mr-3 space-x-4 lg:flex nav__item">
-          <Link href="/serenitech-web/components/login.js" className="px-6 py-2 text-white bg-[#0b4b7d] rounded-md md:ml-5">
+          <Link href="/serenitech-web/components/login.js" className="px-6 py-2 text-white bg-[#0b4b7d] rounded-md md:ml-5 hover:bg-[#1690c7]">
             Inicia sesión
           </Link>
 

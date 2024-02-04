@@ -45,16 +45,20 @@ const Home = () => {
       <SectionTitle
         pretitle="Acerca de nosotros"
         title="Nuestro talentoso equipo">
-        Descubre la pasión y dedicación que impulsa a nuestro equipo. Estamos comprometidos con ofrecer soluciones innovadoras para brindar la mejor experiencia a nuestros usuarios. ¡Conoce a las mentes brillantes detrás de nuestro proyecto!
+        Descubre la pasión y dedicación que impulsa a nuestro equipo. Estamos comprometidos 
+        con ofrecer soluciones innovadoras para brindar la mejor experiencia a nuestros usuarios. 
+        ¡Conoce a las mentes brillantes detrás de nuestro proyecto!
       </SectionTitle>
       <AboutUsSection />
 
-      <div id="video-sobre-autismo"></div>
+      <div id="video-sobre-el-tea"></div>
       <br></br><br></br><br></br>
       <SectionTitle
         pretitle="Mira un video sobre el autismo"
         title="Descubre cómo el autismo impacta en la vida diaria">
-        Este video ofrece una visión detallada sobre el autismo y cómo impacta la vida diaria. Explora las características, desafíos y experiencias relacionadas con el autismo. Acompáñanos en este recorrido informativo para comprender mejor este espectro y fomentar la conciencia sobre el autismo.
+        Este video ofrece una visión detallada sobre el autismo y cómo impacta la vida diaria. 
+        Explora las características, desafíos y experiencias relacionadas con el autismo. Acompáñanos 
+        en este recorrido informativo para comprender mejor este espectro y fomentar la conciencia sobre el autismo.
       </SectionTitle>
       <Video />
 
@@ -63,15 +67,21 @@ const Home = () => {
       <SectionTitle
         pretitle="Testimonios"
         title="Experiencias compartidas por usuarios de SereniApp">
-        Los testimonios son una poderosa herramienta para aumentar la confianza en la marca y la conciencia. En esta sección, destacamos las experiencias de nuestros valiosos usuarios de SereniApp. Descubre cómo nuestra aplicación ha impactado positivamente en sus vidas y ha proporcionado un apoyo significativo. ¡Explora las historias de aquellos que han encontrado valor en SereniApp!
+        Los testimonios son una poderosa herramienta para aumentar la confianza en la marca y la 
+        conciencia. En esta sección, destacamos las experiencias de nuestros valiosos usuarios de 
+        SereniApp. Descubre cómo nuestra aplicación ha impactado positivamente en sus vidas y ha 
+        proporcionado un apoyo significativo. ¡Explora las historias de aquellos que han encontrado valor en SereniApp!
       </SectionTitle>
       <Testimonials />
 
       <div id="faq"></div>
       <br></br><br></br><br></br>
-      <SectionTitle pretitle="FAQ" title="Frequently Asked Questions">
-        Answer your customers possible questions here, it will increase the
-        conversion rate as well as support or chat requests.
+      <SectionTitle 
+        pretitle="Descubre Más" 
+        title="Preguntas Frecuentes">
+        Encuentra respuestas a las preguntas más comunes sobre SereniApp y SereniTech-Band. 
+        Aumenta la comprensión de nuestras soluciones para el cuidado de personas con TEA y 
+        descubre cómo mejorar la seguridad y bienestar con nuestra tecnología innovadora.
       </SectionTitle>
       <Faq />
       <Cta />

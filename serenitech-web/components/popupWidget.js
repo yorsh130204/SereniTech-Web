@@ -13,17 +13,18 @@ const PopupWidget = () => {
     mode: "onTouched",
   });
   const [isSuccess, setIsSuccess] = useState(false);
-  const [Message, setMessage] = useState("");
+  const [message, setMessage] = useState("");
 
-  const userName = useWatch({ control, name: "name", defaultValue: "Someone" });
+  const userName = useWatch({ control, name: "name", defaultValue: "Alguien" });
 
   const onSubmit = async (data, e) => {
     console.log(data);
-    await fetch("https://api.web3forms.com/submit", {
+
+    // Cambia la URL de Formspree y el método según las necesidades de tu formulario.
+    await fetch("https://formspree.io/your-email", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Accept: "application/json",
       },
       body: JSON.stringify(data, null, 2),
     })
@@ -41,7 +42,7 @@ const PopupWidget = () => {
       })
       .catch((error) => {
         setIsSuccess(false);
-        setMessage("Client Error. Please check the console.log for more info");
+        setMessage("Error del cliente. Consulta la consola para obtener más información");
         console.log(error);
       });
   };
@@ -51,7 +52,7 @@ const PopupWidget = () => {
       <Disclosure>
         {({ open }) => (
           <>
-            <Disclosure.Button className="fixed z-40 flex items-center justify-center transition duration-300 bg-[#0b4b7d] rounded-full shadow-lg right-5 bottom-5 w-14 h-14 focus:outline-none hover:bg-[#0b4b7d] focus:bg-[#0b4b7d] ease">
+            <Disclosure.Button className="fixed z-40 flex items-center justify-center transition duration-300 bg-[#0b4b7d] rounded-full shadow-lg right-5 bottom-5 w-14 h-14 focus:outline-none hover:bg-[#1690c7] focus:bg-[#0b4b7d] ease">
               <span className="sr-only">Abrir contacto</span>
               <Transition
                 show={!open}
@@ -106,7 +107,7 @@ const PopupWidget = () => {
               leaveTo="opacity-0 translate-y-5">
               <Disclosure.Panel className=" flex flex-col  overflow-hidden left-0 h-full w-full sm:w-[350px] min-h-[250px] sm:h-[600px] border border-gray-300 dark:border-gray-800 bg-white shadow-2xl rounded-md sm:max-h-[calc(100vh-120px)]">
                 <div className="flex flex-col items-center justify-center h-32 p-5 bg-[#0b4b7d]">
-                  <h3 className="text-lg text-white">¿Cómo podemos ayudar?</h3>
+                  <h3 className="text-lg text-white">¿Cómo te podemos ayudar?</h3>
                   <p className="text-white opacity-50">
                     Normalmente respondemos en unas horas
                   </p>
@@ -144,7 +145,7 @@ const PopupWidget = () => {
                         <input
                           type="text"
                           id="full_name"
-                          placeholder="Fulanito de Tal"
+                          placeholder="Example"
                           {...register("name", {
                             required: "Se necesita el nombre completo",
                             maxLength: 80,
@@ -177,7 +178,7 @@ const PopupWidget = () => {
                               message: "Ingresa un correo electrónico válido",
                             },
                           })}
-                          placeholder="correo@empresa.com"
+                          placeholder="example@example.com"
                           className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring   ${errors.email
                             ? "border-red-600 focus:border-red-600 ring-red-100"
                             : "border-gray-300 focus:border-[#0b4b7d] ring-indigo-100"
@@ -219,7 +220,7 @@ const PopupWidget = () => {
                       <div className="mb-3">
                         <button
                           type="submit"
-                          className="w-full px-3 py-4 text-white bg-[#0b4b7d] rounded-md focus:bg-[#0b4b7d] focus:outline-none">
+                          className="w-full px-3 py-4 text-white bg-[#0b4b7d] rounded-md focus:bg-[#1690c7] focus:outline-none hover:bg-[#1690c7]">
                           {isSubmitting ? (
                             <svg
                               className="w-5 h-5 mx-auto text-white animate-spin"
@@ -243,20 +244,6 @@ const PopupWidget = () => {
                           )}
                         </button>
                       </div>
-                      <p
-                        className="text-xs text-center text-gray-400"
-                        id="result">
-                        <span>
-                          Powered by{" "}
-                          <a
-                            href="https://Web3Forms.com"
-                            className="text-gray-600"
-                            target="_blank"
-                            rel="noopener noreferrer">
-                            Web3Forms
-                          </a>
-                        </span>
-                      </p>
                     </form>
                   )}
 
@@ -277,13 +264,13 @@ const PopupWidget = () => {
                           />
                         </svg>
                         <h3 className="py-5 text-xl text-green-500">
-                          Message sent successfully
+                          Mensaje enviado exitosamente
                         </h3>
                         <p className="text-gray-700 md:px-3">{Message}</p>
                         <button
                           className="mt-6 text-[#0b4b7d] focus:outline-none"
                           onClick={() => reset()}>
-                          Go back
+                          Volver
                         </button>
                       </div>
                     </>
@@ -306,13 +293,13 @@ const PopupWidget = () => {
                       </svg>
 
                       <h3 className="text-xl text-red-400 py-7">
-                        Oops, Something went wrong!
+                        ¡Ups, algo salió mal!
                       </h3>
                       <p className="text-gray-700 md:px-3">{Message}</p>
                       <button
                         className="mt-6 text-[#0b4b7d] focus:outline-none"
                         onClick={() => reset()}>
-                        Go back
+                        Volver
                       </button>
                     </div>
                   )}

@@ -33,18 +33,18 @@ const AboutUsSection = () => {
   ];
 
   return (
-    <Container className="py-16 bg-gray-100 dark:bg-transparent">
+    <Container className="py-16 bg-gray-100 dark:bg-transparent rounded-[20px]">
       <div className="mx-auto">
         <h2 className="text-4xl font-bold mb-12 text-center text-gray-800 dark:text-white">Nuestro Equipo</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 m-8">
           {teamMembers.map((member, index) => (
-            <div key={index} className={`p-8 rounded-md shadow-md flex flex-col items-center transition duration-300 transform hover:scale-105 dark:bg-[#0b4b7d] bg-white`}>
+            <div key={index} className={`p-8 rounded-md shadow-md flex flex-col items-center transition duration-300 transform hover:scale-105 dark:bg-[#0b4b7d] bg-white `}>
               {React.cloneElement(member.icon, {
-                className: `w-12 h-12 text-gray-400`, 
+                className: `w-12 h-12 text-gray-400 hover:text-[#0c5a8d] dark:hover:text-white`, 
               })}
-              <h3 className="text-lg font-bold my-4 text-gray-800 dark:text-white">{member.name}</h3>
-              <p className="mb-2 text-gray-600 dark:text-gray-400">{member.role}</p>
-              <p className="text-center text-gray-700 dark:text-gray-300">{member.description}</p>
+              <h3 className="text-center text-lg font-bold my-4 text-gray-800 dark:text-white">{member.name}</h3>
+              <p className="mb-4 text-gray-600 dark:text-gray-400">{member.role}</p>
+              <p className="text-center text-gray-700 dark:text-gray-300 italic transition duration-300 hover:text-[#0c5a8d] dark:hover:text-white">{member.description}</p>
             </div>
           ))}
         </div>

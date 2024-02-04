@@ -7,16 +7,14 @@ const Hero = () => {
     <Container className="flex flex-wrap mt-14">
       <div className="flex items-center w-full lg:w-1/2">
         <div className="max-w-2xl mb-8">
-          <h1 className="text-4xl font-bold leading-snug tracking-tight text-gray-800 lg:text-4xl lg:leading-tight xl:text-6xl xl:leading-tight dark:text-white">
-            SereniApp
-          </h1>
-          <p className="py-5 text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300">
-            SereniApp es tu asistente personalizado en el cuidado de tus seres queridos con TEA.
-            A través de avanzadas alertas y un monitoreo en tiempo real, podrás estar al tanto de su
-            bienestar donde sea que estén, dándote la capacidad de responder ante cualquier
-            situación para su mayor seguridad.
-          </p>
-
+        <h1 className="text-4xl font-bold leading-snug tracking-tight text-gray-800 lg:text-4xl lg:leading-tight xl:text-6xl xl:leading-tight dark:text-white">
+          SereniApp
+        </h1>
+        <p className="py-5 text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300">
+          SereniApp, tanto en su versión web como móvil, está diseñada para los cuidadores de niños con TEA. Proporciona acceso a datos 
+          históricos de pulso y ubicación, permitiéndote revisar y analizar información pasada para un mejor entendimiento del bienestar 
+          de tus seres queridos. Con funciones avanzadas, podrás acceder a registros detallados y tomar decisiones informadas para garantizar su seguridad.
+        </p>
           <div className="flex flex-col items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row">
             <a
               href="/serenitech-web/components/register.js"

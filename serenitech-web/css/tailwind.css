@@ -7,6 +7,6 @@
   html,
   body {
     @apply dark:bg-trueGray-900;
-    margin-left: 15px;
+    margin: 10px;
   }
 }
