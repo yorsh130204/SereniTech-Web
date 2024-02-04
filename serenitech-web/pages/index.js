@@ -11,6 +11,7 @@ import Testimonials from "../components/testimonials";
 import Cta from "../components/cta";
 import Faq from "../components/faq";
 import PopupWidget from "../components/popupWidget";
+import AboutUsSection from "../components/AboutUs";
 
 const Home = () => {
   return (
@@ -28,36 +29,46 @@ const Home = () => {
       <Hero />
       
       <div id="serenitech-band"></div>
+      <br></br><br></br><br></br>
       <SectionTitle 
-        pretitle="Beneficios de SereniApp"
-        title="¿Por qué comenzar a utilizarlo?">
+        pretitle="Descubre los Beneficios de SereniApp"
+        title="¿Por qué empezar a utilizarlo?">
         SereniTech-Band, la solución integral para el monitoreo de personas con TEA,
-        mejora seguridad y autonomía. Con su interfaz intuitiva y tecnología innovadora,
-        ofrece un apoyo esencial para el bienestar de las personas con TEA y sus cuidadores.
+        eleva la seguridad y autonomía. Con una interfaz intuitiva y tecnología innovadora,
+        brinda apoyo esencial para el bienestar de las personas con TEA y sus cuidadores.
       </SectionTitle>
       <Benefits data={benefitOne} />
       <Benefits imgPos="right" data={benefitTwo} />
 
       <div id="acerca-de-nosotros"></div>
+      <br></br><br></br><br></br>
       <SectionTitle
-        pretitle="Mira un video demostrativo"
-        title="Aprende cómo funciona">
-        This section is to highlight a promo or demo video of your product.
-        Analysts says a landing page with video has 3% more conversion rate. So,
-        don&apos;t forget to add one. Just like this.
+        pretitle="Acerca de nosotros"
+        title="Nuestro talentoso equipo">
+        Descubre la pasión y dedicación que impulsa a nuestro equipo. Estamos comprometidos con ofrecer soluciones innovadoras para brindar la mejor experiencia a nuestros usuarios. ¡Conoce a las mentes brillantes detrás de nuestro proyecto!
+      </SectionTitle>
+      <AboutUsSection />
+
+      <div id="video-sobre-autismo"></div>
+      <br></br><br></br><br></br>
+      <SectionTitle
+        pretitle="Mira un video sobre el autismo"
+        title="Descubre cómo el autismo impacta en la vida diaria">
+        Este video ofrece una visión detallada sobre el autismo y cómo impacta la vida diaria. Explora las características, desafíos y experiencias relacionadas con el autismo. Acompáñanos en este recorrido informativo para comprender mejor este espectro y fomentar la conciencia sobre el autismo.
       </SectionTitle>
       <Video />
 
       <div id="testimonios"></div>
+      <br></br><br></br><br></br>
       <SectionTitle
         pretitle="Testimonios"
-        title="Opiniones de usuarios de SereniApp">
-        Testimonails is a great way to increase the brand trust and awareness.
-        Use this section to highlight your popular customers.
+        title="Experiencias compartidas por usuarios de SereniApp">
+        Los testimonios son una poderosa herramienta para aumentar la confianza en la marca y la conciencia. En esta sección, destacamos las experiencias de nuestros valiosos usuarios de SereniApp. Descubre cómo nuestra aplicación ha impactado positivamente en sus vidas y ha proporcionado un apoyo significativo. ¡Explora las historias de aquellos que han encontrado valor en SereniApp!
       </SectionTitle>
       <Testimonials />
 
       <div id="faq"></div>
+      <br></br><br></br><br></br>
       <SectionTitle pretitle="FAQ" title="Frequently Asked Questions">
         Answer your customers possible questions here, it will increase the
         conversion rate as well as support or chat requests.

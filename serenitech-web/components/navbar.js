@@ -2,24 +2,24 @@ import Link from "next/link";
 import ThemeChanger from "./DarkSwitch";
 import Image from "next/image"
 import { Disclosure } from "@headlessui/react";
-import Home from "../pages/index.js"
 
 const Navbar = () => {
   const navigation = [
     "SereniTech-Band",
     "Acerca de nosotros",
+    "Video sobre Autismo",
     "Testimonios",
     "FAQ",
   ];
 
   return (
-    <div className="w-full">
+    <div className="w-full fixed top-0 z-50 bg-white dark:bg-trueGray-900">      
       <nav className="container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-0">
         <Disclosure>
           {({ open }) => (
             <>
               <div className="flex flex-wrap items-center justify-between w-full lg:w-auto">
-                <Link hr>
+                <Link href="/#">
                   <span className="flex items-center space-x-2 text-2xl font-medium text-[#127cb1] dark:text-gray-100">
                     <span>
                       <Image
