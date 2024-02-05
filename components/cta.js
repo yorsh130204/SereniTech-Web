@@ -15,8 +15,8 @@ const Cta = () => {
         </div>
         <div className="flex-shrink-0 w-full text-center lg:w-auto">
           <a
-            href="/register.js"  
-            target="_blank"
+            href="/signin"  
+            target=""
             rel="noopener"
             className="inline-block py-3 mx-auto text-lg font-medium text-center text-[#0b4b7d] bg-white rounded-md px-7 lg:px-10 lg:py-5 hover:bg-gray-200 dark:bg-gray-500 dark:hover:bg-gray-600 dark:text-white">
             Registrarse

@@ -12,19 +12,12 @@ import Cta from "../components/cta";
 import Faq from "../components/faq";
 import PopupWidget from "../components/popupWidget";
 import AboutUsSection from "../components/AboutUs";
+import CustomHead from "../components/CustomHead"
 
 const Home = () => {
   return (
     <>
-      <Head>
-        <title>SereniApp</title>
-        <meta
-          name="description"
-          content="SereniApp es tu asistente personalizado en el cuidado de tus seres queridos con TEA."
-        />
-        <link rel="icon" href="/favicon.png" />
-      </Head>
-      
+      <CustomHead />
       <Navbar />
       <Hero />
       
