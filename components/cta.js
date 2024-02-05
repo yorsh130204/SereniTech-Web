@@ -18,7 +18,7 @@ const Cta = () => {
             href="/register.js"  
             target="_blank"
             rel="noopener"
-            className="inline-block py-3 mx-auto text-lg font-medium text-center text-[#0b4b7d] bg-white rounded-md px-7 lg:px-10 lg:py-5">
+            className="inline-block py-3 mx-auto text-lg font-medium text-center text-[#0b4b7d] bg-white rounded-md px-7 lg:px-10 lg:py-5 hover:bg-gray-200 dark:bg-gray-500 dark:hover:bg-gray-600 dark:text-white">
             Registrarse
           </a>
         </div>

@@ -60,7 +60,7 @@ const Testimonials = () => {
         {testimonialsData.map((testimonial, index) => (
           <div key={index} className="flex-shrink-0 w-64 p-4">
             <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 py-14 rounded-2xl dark:bg-trueGray-800 hover:shadow-lg transition-transform duration-300 transform hover:-translate-y-2">
-              <p className="text-lg text-justify leading-normal text-trueGray-600">{testimonial.text}</p>
+              <p className="text-lg text-justify leading-normal text-trueGray-600 dark:text-trueGray-400">{testimonial.text}</p>
               <Avatar image={index === 0 ? userOneImg : index === 1 ? userTwoImg : index === 2 ? userThreeImg : index === 3 ? userFourImg : userFiveImg} name={testimonial.author} title={testimonial.title} />
             </div>
           </div>
