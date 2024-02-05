@@ -21,7 +21,7 @@ const PopupWidget = () => {
     console.log(data);
 
     // Cambia la URL de Formspree y el método según las necesidades de tu formulario.
-    await fetch("https://formspree.io/your-email", {
+    await fetch("https://formspree.io/f/xjvnyekd", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -108,34 +108,10 @@ const PopupWidget = () => {
               <Disclosure.Panel className=" flex flex-col  overflow-hidden left-0 h-full w-full sm:w-[350px] min-h-[250px] sm:h-[600px] border border-gray-300 dark:border-gray-800 bg-white shadow-2xl rounded-md sm:max-h-[calc(100vh-120px)]">
                 <div className="flex flex-col items-center justify-center h-32 p-5 bg-[#0b4b7d]">
                   <h3 className="text-lg text-white">¿Cómo te podemos ayudar?</h3>
-                  <p className="text-white opacity-50">
-                    Normalmente respondemos en unas horas
-                  </p>
                 </div>
                 <div className="flex-grow h-full p-6 overflow-auto bg-gray-50 ">
                   {!isSubmitSuccessful && (
                     <form onSubmit={handleSubmit(onSubmit)} noValidate>
-                      <input
-                        type="hidden"
-                        value="YOUR_ACCESS_KEY_HERE"
-                        {...register("apikey")}
-                      />
-                      <input
-                        type="hidden"
-                        value={`${userName} sent a message from Nextly`}
-                        {...register("subject")}
-                      />
-                      <input
-                        type="hidden"
-                        value="Nextly Template"
-                        {...register("from_name")}
-                      />
-                      <input
-                        type="checkbox"
-                        className="hidden"
-                        style={{ display: "none" }}
-                        {...register("botcheck")}></input>
-
                       <div className="mb-4">
                         <label
                           htmlFor="full_name"
@@ -203,14 +179,15 @@ const PopupWidget = () => {
                           rows="4"
                           id="message"
                           {...register("message", {
-                            required: "Escriba su mensaje",
+                            required: "Escriba su mensaje", // Mensaje de error personalizado
                           })}
                           placeholder="Su mensaje"
                           className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md h-28 focus:outline-none focus:ring   ${errors.message
                             ? "border-red-600 focus:border-red-600 ring-red-100"
                             : "border-gray-300 focus:border-[#0b4b7d] ring-indigo-100"
                             }`}
-                          required></textarea>
+                          required
+                        ></textarea>
                         {errors.message && (
                           <div className="mt-1 text-sm text-red-400 invalid-feedback">
                             {errors.message.message}
@@ -218,65 +195,66 @@ const PopupWidget = () => {
                         )}
                       </div>
                       <div className="mb-3">
-                        <button
-                          type="submit"
-                          className="w-full px-3 py-4 text-white bg-[#0b4b7d] rounded-md focus:bg-[#1690c7] focus:outline-none hover:bg-[#1690c7]">
-                          {isSubmitting ? (
-                            <svg
-                              className="w-5 h-5 mx-auto text-white animate-spin"
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 24 24">
-                              <circle
-                                className="opacity-25"
-                                cx="12"
-                                cy="12"
-                                r="10"
-                                stroke="currentColor"
-                                strokeWidth="4"></circle>
-                              <path
-                                className="opacity-75"
-                                fill="currentColor"
-                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                            </svg>
-                          ) : (
-                            "Enviar mensaje"
-                          )}
-                        </button>
+                      <button
+                        type="submit"
+                        className="w-full px-3 py-4 text-white bg-[#0b4b7d] rounded-md focus:bg-[#1690c7] focus:outline-none hover:bg-[#1690c7]"
+                        disabled={isSubmitting}
+                      >
+                        {isSubmitting ? (
+                          <svg
+                            className="w-5 h-5 mx-auto text-white animate-spin"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                          >
+                            <circle
+                              className="opacity-25"
+                              cx="12"
+                              cy="12"
+                              r="10"
+                              stroke="currentColor"
+                              strokeWidth="4"
+                            ></circle>
+                            <path
+                              className="opacity-75"
+                              fill="currentColor"
+                              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                            ></path>
+                          </svg>
+                        ) : (
+                          "Enviar mensaje"
+                        )}
+                      </button>
                       </div>
                     </form>
                   )}
-
-                  {isSubmitSuccessful && isSuccess && (
-                    <>
-                      <div className="flex flex-col items-center justify-center h-full text-center text-white rounded-md">
-                        <svg
-                          width="60"
-                          height="60"
-                          className="text-green-300"
-                          viewBox="0 0 100 100"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <path
-                            d="M26.6666 50L46.6666 66.6667L73.3333 33.3333M50 96.6667C43.8716 96.6667 37.8033 95.4596 32.1414 93.1144C26.4796 90.7692 21.3351 87.3317 17.0017 82.9983C12.6683 78.6649 9.23082 73.5204 6.8856 67.8586C4.54038 62.1967 3.33331 56.1283 3.33331 50C3.33331 43.8716 4.54038 37.8033 6.8856 32.1414C9.23082 26.4796 12.6683 21.3351 17.0017 17.0017C21.3351 12.6683 26.4796 9.23084 32.1414 6.88562C37.8033 4.5404 43.8716 3.33333 50 3.33333C62.3767 3.33333 74.2466 8.24998 82.9983 17.0017C91.75 25.7534 96.6666 37.6232 96.6666 50C96.6666 62.3768 91.75 74.2466 82.9983 82.9983C74.2466 91.75 62.3767 96.6667 50 96.6667Z"
-                            stroke="currentColor"
-                            strokeWidth="3"
-                          />
-                        </svg>
-                        <h3 className="py-5 text-xl text-green-500">
-                          Mensaje enviado exitosamente
-                        </h3>
-                        <p className="text-gray-700 md:px-3">{Message}</p>
-                        <button
-                          className="mt-6 text-[#0b4b7d] focus:outline-none"
-                          onClick={() => reset()}>
-                          Volver
-                        </button>
-                      </div>
-                    </>
+                  {isSubmitSuccessful && !errors.name && !errors.email && !errors.message && (
+                    <div className="flex flex-col items-center justify-center h-full text-center text-white rounded-md">
+                      <svg
+                        width="60"
+                        height="60"
+                        className="text-green-300"
+                        viewBox="0 0 100 100"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M26.6666 50L46.6666 66.6667L73.3333 33.3333M50 96.6667C43.8716 96.6667 37.8033 95.4596 32.1414 93.1144C26.4796 90.7692 21.3351 87.3317 17.0017 82.9983C12.6683 78.6649 9.23082 73.5204 6.8856 67.8586C4.54038 62.1967 3.33331 56.1283 3.33331 50C3.33331 43.8716 4.54038 37.8033 6.8856 32.1414C9.23082 26.4796 12.6683 21.3351 17.0017 17.0017C21.3351 12.6683 26.4796 9.23084 32.1414 6.88562C37.8033 4.5404 43.8716 3.33333 50 3.33333C62.3767 3.33333 74.2466 8.24998 82.9983 17.0017C91.75 25.7534 96.6666 37.6232 96.6666 50C96.6666 62.3768 91.75 74.2466 82.9983 82.9983C74.2466 91.75 62.3767 96.6667 50 96.6667Z"
+                          stroke="currentColor"
+                          strokeWidth="3"
+                        />
+                      </svg>
+                      <h3 className="py-5 text-xl text-green-500">
+                        Mensaje enviado exitosamente
+                      </h3>
+                      <p className="text-gray-700 md:px-3">{message}</p>
+                      <button
+                        className="mt-6 text-[#0b4b7d] focus:outline-none"
+                        onClick={() => reset()}>
+                        Volver
+                      </button>
+                    </div>
                   )}
-
-                  {isSubmitSuccessful && !isSuccess && (
+                  {isSubmitSuccessful && (errors.name || errors.email || errors.message) && (
                     <div className="flex flex-col items-center justify-center h-full text-center text-white rounded-md">
                       <svg
                         width="60"
@@ -295,7 +273,7 @@ const PopupWidget = () => {
                       <h3 className="text-xl text-red-400 py-7">
                         ¡Ups, algo salió mal!
                       </h3>
-                      <p className="text-gray-700 md:px-3">{Message}</p>
+                      <p className="text-gray-700 md:px-3">{message}</p>
                       <button
                         className="mt-6 text-[#0b4b7d] focus:outline-none"
                         onClick={() => reset()}>
