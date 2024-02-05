@@ -1,0 +1,10 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "/serenitech-web/next.config.js",
+        "use": "@now/next"
+      }
+    ]
+}
+  
