@@ -44,57 +44,61 @@ export default function SignUp() {
 
       <div className="flex items-center justify-center min-h-screen">
         <div className="bg-white rounded-md p-8 shadow-md w-96 dark:bg-trueGray-600">
-          <h2 className="text-3xl font-bold mb-6 dark:text-white">Sign Up</h2>
+          <h2 className="text-3xl font-bold mb-6 dark:text-white">Registrarse</h2>
           <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
             <div className="relative">
               <label htmlFor="name" className="text-sm mb-1 flex items-center">  {/* Nueva etiqueta para el nombre */}
                 <User className="w-5 h-5 mr-2 text-gray-500 dark:text-white" />
-                Name:
+                Nombre:
               </label>
               <input
                 id="name"
-                className="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:border-[#127cb1] transition duration-300 ease-in-out"
+                className="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:border-[#127cb1] transition duration-300 ease-in-out dark:bg-trueGray-600"
                 type="text"
                 ref={nameRef}
+                placeholder="Nombre completo"
                 required
               />
             </div>
             <div className="relative">
               <label htmlFor="email" className="text-sm mb-1 flex items-center">
                 <Mail className="w-5 h-5 mr-2 text-gray-500 dark:text-white" />
-                Email:
+                Correo electrónico:
               </label>
               <input
                 id="email"
-                className="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:border-[#127cb1] transition duration-300 ease-in-out"
+                className="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:border-[#127cb1] transition duration-300 ease-in-out dark:bg-trueGray-600"
                 type="email"
                 ref={emailRef}
+                placeholder="ejemplo@correo.com"
                 required
               />
             </div>
             <div className="relative">
               <label htmlFor="password" className="text-sm mb-1 flex items-center">
                 <Lock className="w-5 h-5 mr-2 text-gray-500 dark:text-white" />
-                Password:
+                Contraseña:
               </label>
               <input
                 id="password"
-                className="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:border-[#127cb1] transition duration-300 ease-in-out"
+                className="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:border-[#127cb1] transition duration-300 ease-in-out dark:bg-trueGray-600"
                 type="password"
                 ref={passwordRef}
+                placeholder="Mínimo 8 caracteres"
                 required
               />
             </div>
             <div className="relative">
               <label htmlFor="password-confirm" className="text-sm mb-1 flex items-center">
                 <Lock className="w-5 h-5 mr-2 text-gray-500 dark:text-white" />
-                Confirm Password:
+                Confirmar contraseña:
               </label>
               <input
                 id="password-confirm"
-                className="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:border-[#127cb1] transition duration-300 ease-in-out"
+                className="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:border-[#127cb1] transition duration-300 ease-in-out dark:bg-trueGray-600"
                 type="password"
                 ref={passwordConfirmRef}
+                placeholder="Mínimo 8 caracteres"
                 required
               />
             </div>
@@ -104,16 +108,16 @@ export default function SignUp() {
               type="submit"
               disabled={loading}
             >
-              Sign Up
+              Registrarse
             </button>
           </form>
           <div className="mt-3 text-center">
-            Already have an account?{' '}
+            ¿Ya tienes una cuenta?{' '}
             <a
               href="/login"
               className="text-[#127cb1] dark:text-[#1797ce] dark:hover:text-white transition-colors duration-300"
             >
-              Log In
+              Iniciar sesión
             </a>
           </div>
         </div>
