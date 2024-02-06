@@ -4,17 +4,10 @@ import Image from "next/image"
 import { Disclosure } from "@headlessui/react";
 
 const Navbar2 = () => {
-  const navigation = [
-    "SereniTech-Band",
-    "Acerca de nosotros",
-    "Video sobre el TEA",
-    "Testimonios",
-    "FAQ",
-  ];
 
   return (
-    <div className="w-full fixed top-0 z-50 bg-white dark:bg-trueGray-900">      
-      <nav className="container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-0">
+    <div className="w-full fixed -top-1 z-50 bg-transparen dark:bg-trasparent">      
+      <nav className="container relative flex flex-wrap items-center justify-between p-10 mx-auto lg:justify-between xl:px-0">
         <Disclosure>
           {({ open }) => (
             <>

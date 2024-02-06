@@ -52,15 +52,29 @@ const Testimonials = () => {
     prevArrow: <CustomPrevArrow />,
     nextArrow: <CustomNextArrow />,
     beforeChange: (current, next) => setCurrentSlide(next),
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        }
+      },
+    ],
   };
 
   return (
     <Container>
-      <Slider {...settings} className="mx-4 ">
+      <Slider {...settings} className="mx-4">
         {testimonialsData.map((testimonial, index) => (
-          <div key={index} className="flex-shrink-0 w-64 p-4">
-            <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 py-14 rounded-2xl dark:bg-trueGray-800 hover:shadow-lg transition-transform duration-300 transform hover:-translate-y-2">
-              <p className="text-lg text-justify leading-normal text-trueGray-600 dark:text-trueGray-400">{testimonial.text}</p>
+          <div key={index} className="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
+            <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-4 py-4 rounded-md dark:bg-trueGray-800 hover:shadow-lg transition-transform duration-300 transform hover:-translate-y-2">
+              <p className="text-sm md:text-base text-justify leading-normal text-trueGray-600 dark:text-trueGray-400 mb-4">{testimonial.text}</p>
               <Avatar image={index === 0 ? userOneImg : index === 1 ? userTwoImg : index === 2 ? userThreeImg : index === 3 ? userFourImg : userFiveImg} name={testimonial.author} title={testimonial.title} />
             </div>
           </div>
@@ -90,13 +104,13 @@ function CustomNextArrow(props) {
 
 function Avatar(props) {
   return (
-    <div className="flex items-center mt-8 space-x-3">
-      <div className="flex-shrink-0 overflow-hidden rounded-full w-15 h-15">
-        <Image src={props.image} width={80} height={80} alt="Avatar" placeholder="blur" />
+    <div className="flex items-center mt-4 sm:mt-8 space-x-3">
+      <div className="flex-shrink-0 overflow-hidden rounded-full w-12 h-12 sm:w-15 sm:h-15">
+        <Image src={props.image} width={60} height={60} alt="Avatar" placeholder="blur" />
       </div>
       <div>
-        <div className="text-lg font-medium">{props.name}</div>
-        <div className="text-gray-600 dark:text-gray-400">{props.title}</div>
+        <div className="text-sm font-medium">{props.name}</div>
+        <div className="text-gray-600 dark:text-gray-400 text-xs">{props.title}</div>
       </div>
     </div>
   );

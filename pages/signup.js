@@ -47,13 +47,13 @@ export default function SignUp() {
           <h2 className="text-3xl font-bold mb-6 dark:text-white">Registrarse</h2>
           <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
             <div className="relative">
-              <label htmlFor="name" className="text-sm mb-1 flex items-center">  {/* Nueva etiqueta para el nombre */}
+              <label htmlFor="name" className="text-sm mb-2 flex items-center">  {/* Nueva etiqueta para el nombre */}
                 <User className="w-5 h-5 mr-2 text-gray-500 dark:text-white" />
                 Nombre:
               </label>
               <input
                 id="name"
-                className="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:border-[#127cb1] transition duration-300 ease-in-out dark:bg-trueGray-600"
+                className="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:border-[#127cb1] transition duration-300 ease-in-out dark:bg-trueGray-700"
                 type="text"
                 ref={nameRef}
                 placeholder="Nombre completo"
@@ -61,13 +61,13 @@ export default function SignUp() {
               />
             </div>
             <div className="relative">
-              <label htmlFor="email" className="text-sm mb-1 flex items-center">
+              <label htmlFor="email" className="text-sm mb-2 flex items-center">
                 <Mail className="w-5 h-5 mr-2 text-gray-500 dark:text-white" />
                 Correo electrónico:
               </label>
               <input
                 id="email"
-                className="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:border-[#127cb1] transition duration-300 ease-in-out dark:bg-trueGray-600"
+                className="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:border-[#127cb1] transition duration-300 ease-in-out dark:bg-trueGray-700"
                 type="email"
                 ref={emailRef}
                 placeholder="ejemplo@correo.com"
@@ -75,13 +75,13 @@ export default function SignUp() {
               />
             </div>
             <div className="relative">
-              <label htmlFor="password" className="text-sm mb-1 flex items-center">
+              <label htmlFor="password" className="text-sm mb-2 flex items-center">
                 <Lock className="w-5 h-5 mr-2 text-gray-500 dark:text-white" />
                 Contraseña:
               </label>
               <input
                 id="password"
-                className="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:border-[#127cb1] transition duration-300 ease-in-out dark:bg-trueGray-600"
+                className="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:border-[#127cb1] transition duration-300 ease-in-out dark:bg-trueGray-700"
                 type="password"
                 ref={passwordRef}
                 placeholder="Mínimo 8 caracteres"
@@ -89,13 +89,13 @@ export default function SignUp() {
               />
             </div>
             <div className="relative">
-              <label htmlFor="password-confirm" className="text-sm mb-1 flex items-center">
+              <label htmlFor="password-confirm" className="text-sm mb-2 flex items-center">
                 <Lock className="w-5 h-5 mr-2 text-gray-500 dark:text-white" />
                 Confirmar contraseña:
               </label>
               <input
                 id="password-confirm"
-                className="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:border-[#127cb1] transition duration-300 ease-in-out dark:bg-trueGray-600"
+                className="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:border-[#127cb1] transition duration-300 ease-in-out dark:bg-trueGray-700"
                 type="password"
                 ref={passwordConfirmRef}
                 placeholder="Mínimo 8 caracteres"

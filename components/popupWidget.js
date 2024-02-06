@@ -52,7 +52,7 @@ const PopupWidget = () => {
       <Disclosure>
         {({ open }) => (
           <>
-            <Disclosure.Button className="fixed z-40 flex items-center justify-center transition duration-300 bg-[#0b4b7d] rounded-full shadow-lg right-5 bottom-5 w-14 h-14 focus:outline-none hover:bg-[#1690c7] focus:bg-[#0b4b7d] ease">
+            <Disclosure.Button className="fixed z-40 flex items-center justify-center transition duration-300 bg-[#0b4b7d] rounded-full shadow-lg right-5 bottom-5 w-14 h-14 focus:outline-none hover:bg-[#1690c7] focus:bg-[#0b4b7d] ease ">
               <span className="sr-only">Abrir contacto</span>
               <Transition
                 show={!open}
@@ -109,13 +109,13 @@ const PopupWidget = () => {
                 <div className="flex flex-col items-center justify-center h-32 p-5 bg-[#0b4b7d]">
                   <h3 className="text-lg text-white">¿Cómo te podemos ayudar?</h3>
                 </div>
-                <div className="flex-grow h-full p-6 overflow-auto bg-gray-50 ">
+                <div className="flex-grow h-full p-6 overflow-auto bg-gray-50 dark:bg-trueGray-700">
                   {!isSubmitSuccessful && (
                     <form onSubmit={handleSubmit(onSubmit)} noValidate>
                       <div className="mb-4">
                         <label
                           htmlFor="full_name"
-                          className="block mb-2 text-sm text-gray-600 dark:text-gray-400">
+                          className="block mb-2 text-sm text-gray-600 dark:text-trueGray-200">
                           Nombre completo
                         </label>
                         <input
@@ -126,7 +126,7 @@ const PopupWidget = () => {
                             required: "Se necesita el nombre completo",
                             maxLength: 80,
                           })}
-                          className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring   ${errors.name
+                          className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring dark:bg-trueGray-400 dark:placeholder:text-trueGray-300 ${errors.name
                             ? "border-red-600 focus:border-red-600 ring-red-100"
                             : "border-gray-300 focus:border-[#0b4b7d] ring-indigo-100"
                             }`}
@@ -141,7 +141,7 @@ const PopupWidget = () => {
                       <div className="mb-4">
                         <label
                           htmlFor="email"
-                          className="block mb-2 text-sm text-gray-600 dark:text-gray-400">
+                          className="block mb-2 text-sm text-gray-600 dark:text-trueGray-200">
                           Correo electrónico
                         </label>
                         <input
@@ -155,7 +155,7 @@ const PopupWidget = () => {
                             },
                           })}
                           placeholder="example@example.com"
-                          className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring   ${errors.email
+                          className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring dark:bg-trueGray-400 dark:placeholder:text-trueGray-300 ${errors.email
                             ? "border-red-600 focus:border-red-600 ring-red-100"
                             : "border-gray-300 focus:border-[#0b4b7d] ring-indigo-100"
                             }`}
@@ -171,7 +171,7 @@ const PopupWidget = () => {
                       <div className="mb-4">
                         <label
                           htmlFor="message"
-                          className="block mb-2 text-sm text-gray-600 dark:text-gray-400">
+                          className="block mb-2 text-sm text-gray-600 dark:text-trueGray-200">
                           Su mensaje
                         </label>
 
@@ -182,7 +182,7 @@ const PopupWidget = () => {
                             required: "Escriba su mensaje", // Mensaje de error personalizado
                           })}
                           placeholder="Su mensaje"
-                          className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md h-28 focus:outline-none focus:ring   ${errors.message
+                          className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md h-28 focus:outline-none focus:ring dark:bg-trueGray-400 dark:placeholder:text-trueGray-300 ${errors.message
                             ? "border-red-600 focus:border-red-600 ring-red-100"
                             : "border-gray-300 focus:border-[#0b4b7d] ring-indigo-100"
                             }`}
