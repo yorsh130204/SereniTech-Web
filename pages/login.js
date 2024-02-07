@@ -16,13 +16,20 @@ export default function Login() {
 
     try {
       setError('');
+
+      // Check if the password is at least 8 characters
+      const password = passwordRef.current.value;
+      if (password.length < 8) {
+        throw new Error('La contraseña debe tener al menos 8 caracteres.');
+      }
+
       setLoading(true);
-      await login(emailRef.current.value, passwordRef.current.value);
+      await login(emailRef.current.value, password);
       // Redirect to dashboard or any other page upon successful login
       window.location.href = "/dashboard";
     } catch (error) {
       console.error("Error al iniciar sesión", error);
-      setError("Error al iniciar sesión");
+      setError(error.message || "Error al iniciar sesión");
     }
 
     setLoading(false);

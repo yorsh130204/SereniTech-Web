@@ -15,12 +15,19 @@ export default function SignUp() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-
+  
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
       setError("Las contraseñas no coinciden");
       return;
     }
-
+  
+    // Check if the password is at least 8 characters
+    const password = passwordRef.current.value;
+    if (password.length < 8) {
+      setError('La contraseña debe tener al menos 8 caracteres.');
+      return;
+    }
+  
     try {
       setError('');
       setLoading(true);
