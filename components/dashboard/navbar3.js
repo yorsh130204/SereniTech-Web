@@ -1,16 +1,69 @@
-import Link from "next/link";
-import ThemeChanger from "./DarkSwitch";
+// Navbar.js
+import ThemeChanger from "../DarkSwitch";
 import Image from "next/image"
 import { Disclosure } from "@headlessui/react";
+import {Button} from "@nextui-org/button";
+import { useAuth } from '../../contexts/AuthContext';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react'; // Importa useEffect
+import { auth, database } from '../../config/firebase';
+import {User, Link} from "@nextui-org/react";
 
 const Navbar = () => {
   const navigation = [
-    "SereniTech-Band",
-    "Acerca de nosotros",
-    "Video sobre el TEA",
-    "Testimonios",
-    "FAQ",
+    "Pulso",
+    "GPS",
+    "Notificaciones",
+    "Cuenta",
   ];
+
+  const { currentUser, logout } = useAuth();
+  const router = useRouter();
+  const [userEmail, setUserEmail] = useState(null);
+  const [userName, setUserName] = useState(null);
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+      router.push('/');
+    } catch (error) {
+      console.error('Error logging out', error);
+    }
+  };
+
+  const getUserData = async () => {
+    try {
+      const user = auth.currentUser;
+
+      // Obtener datos adicionales del usuario desde la base de datos en tiempo real
+      const snapshot = await database.ref(`users/${user.uid}`).once('value');
+      const userData = snapshot.val();
+
+      if (userData) {
+        const userEmail = userData.email;
+        const userName = userData.name;
+
+        // Almacenar en el estado del componente
+        setUserName(userName);
+        setUserEmail(userEmail);
+
+        // Puedes utilizar userEmail y userName según tus necesidades
+        console.log('Email del usuario:', userEmail);
+        console.log('Nombre del usuario:', userName);
+        
+        // Aquí puedes actualizar el estado del componente o realizar otras acciones con los datos del usuario
+      } else {
+        console.log('No se encontraron datos adicionales para el usuario');
+      }
+    } catch (error) {
+      console.error('Error al obtener datos del usuario:', error);
+    }
+  };
+
+  useEffect(() => {
+    // Llamar a la función para obtener datos del usuario al cargar el componente
+    getUserData();
+}, [currentUser]);
 
   return (
     <div className="w-full fixed top-0 z-50 bg-white dark:bg-black">      
@@ -64,9 +117,9 @@ const Navbar = () => {
                         {item}
                       </Link>
                     ))}
-                    <Link href="/login" className="w-50% px-6 py-2 mt-3 text-center text-white bg-[#0b4b7d] rounded-md lg:ml-5 hover:bg-[#1690c7]">
-                      Inicia sesión
-                    </Link>
+                    <Button onClick={handleLogout} className="w-50% px-6 py-2 mt-3 text-center text-white bg-[#0b4b7d] rounded-md lg:ml-5 hover:bg-[#1690c7]">
+                      Cerrar sesión
+                    </Button>
                   </>
                 </Disclosure.Panel>
               </div>
@@ -88,9 +141,21 @@ const Navbar = () => {
         </div>
 
         <div className="hidden mr-3 space-x-4 lg:flex nav__item">
-          <Link href="/login" className="px-6 py-2 text-white bg-[#0b4b7d] rounded-md md:ml-5 hover:bg-[#1690c7]">
-            Inicia sesión
-          </Link>
+          <User   
+            name={userName}
+            description={(
+              <Link href="" size="sm" isExternal>
+                {userEmail}
+              </Link>
+            )}
+            avatarProps={{
+              src: "../../public/img/user1.png"
+            }}
+          />
+
+          <Button onClick={handleLogout} className="px-6 py-2 text-white bg-[#0b4b7d] rounded-md md:ml-5 hover:bg-[#1690c7]">
+            Cerrar sesión
+          </Button>
 
           <ThemeChanger />
         </div>
