@@ -1,3 +1,4 @@
+//_app.js
 import { ThemeProvider } from "next-themes";
 import { AuthProvider } from "../contexts/AuthContext";
 import "../css/tailwind.css";

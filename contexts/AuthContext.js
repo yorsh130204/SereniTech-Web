@@ -39,9 +39,20 @@ export function AuthProvider({ children }) {
     login: async (email, password) => {
       try {
         await auth.signInWithEmailAndPassword(email, password);
+        console.log("Inicio de sesión exitoso");
       } catch (error) {
         console.error("Error al iniciar sesión", error);
         throw error; // Re-lanza el error para que pueda ser manejado en el componente Login
+      }
+    },
+    logout: async () => {
+      try {
+        console.log("Antes de cerrar sesión");
+        await auth.signOut();
+        console.log("Después de cerrar sesión");
+      } catch (error) {
+        console.error("Error al cerrar sesión", error);
+        throw error;
       }
     },
   };
