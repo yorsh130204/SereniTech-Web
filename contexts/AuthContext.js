@@ -1,6 +1,8 @@
+//AuthContext.js
 import React, { useEffect, useContext, useState, createContext } from 'react';
 import { auth, database } from '../config/firebase';
 import { ref, set } from 'firebase/database';
+import { useRouter } from 'next/router';
 
 const AuthContext = createContext();
 
@@ -9,6 +11,7 @@ export const useAuth = () => {
 };
 
 export function AuthProvider({ children }) {
+  const router = useRouter();
   const [currentUser, setCurrentUser] = useState();
 
   // Nueva función para guardar información en la Realtime Database
@@ -31,18 +34,22 @@ export function AuthProvider({ children }) {
       try {
         const userCredential = await auth.createUserWithEmailAndPassword(email, password);
         await saveUserDataToDatabase(userCredential.user, name);
+        // Redirect to the dashboard or protected route
+        router.push('/dashboard');
       } catch (error) {
         console.error("Error al crear la cuenta", error);
-        throw error; // Re-lanza el error para que pueda ser manejado en el componente SignUp
+        throw error;
       }
     },
     login: async (email, password) => {
       try {
         await auth.signInWithEmailAndPassword(email, password);
+        // Redirect to the dashboard or protected route
+        router.push('/dashboard');
         console.log("Inicio de sesión exitoso");
       } catch (error) {
         console.error("Error al iniciar sesión", error);
-        throw error; // Re-lanza el error para que pueda ser manejado en el componente Login
+        throw error;
       }
     },
     logout: async () => {
@@ -59,7 +66,14 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
-      setCurrentUser(user);
+      setCurrentUser((prevUser) => {
+        // Ensure you are working with the latest state
+        if (prevUser !== user) {
+          return user;
+        } else {
+          return prevUser;
+        }
+      });
     });
 
     return unsubscribe;

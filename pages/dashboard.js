@@ -1,26 +1,39 @@
-// Dashboard.js
-import React from 'react';
+//dashboard.js
+import React, { useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
-import Home from "../pages/index.js";
+import { useRouter } from 'next/router';
 
-export default function Dashboard() {
-  const { logout } = useAuth();
+const Dashboard = () => {
+  const { currentUser, logout } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    const checkAuthentication = async () => {
+      if (!currentUser) {
+      }
+    };
+
+    checkAuthentication();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentUser]);
 
   const handleLogout = async () => {
     try {
       await logout();
-      // Después de cerrar sesión, puedes redirigir a la página de inicio o a donde desees.
-      window.location.href = "/";
+      router.push('/login');
     } catch (error) {
-      console.error("Error al cerrar sesión", error);
+      console.error('Error logging out', error);
     }
   };
 
   return (
     <div>
-      <p>Hola Mundo!!!</p>
-      <button onClick={handleLogout}>Cerrar Sesión</button>
-      {/* Contenido del dashboard */}
+      <p>Hello, {currentUser ? currentUser.email : currentUser.email}!</p>
+      <button onClick={handleLogout}>Logout</button>
+      {/* Other dashboard content */}
     </div>
   );
-}
+};
+
+export default Dashboard;
