@@ -8,13 +8,11 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react'; // Importa useEffect
 import { auth, database } from '../../config/firebase';
 import {User, Link} from "@nextui-org/react";
-import Img1 from "../../public/img/user1.png";
 
-const Navbar = () => {
+const Navbar = ({ onSelectSection }) => {
   const navigation = [
     "Pulso",
     "GPS",
-    "Notificaciones",
     "Cuenta",
   ];
 
@@ -26,7 +24,7 @@ const Navbar = () => {
   const handleLogout = async () => {
     try {
       await logout();
-      router.push('/');
+      router.push('/login');
     } catch (error) {
       console.error('Error logging out', error);
     }
@@ -47,10 +45,6 @@ const Navbar = () => {
         // Almacenar en el estado del componente
         setUserName(userName);
         setUserEmail(userEmail);
-
-        // Puedes utilizar userEmail y userName según tus necesidades
-        console.log('Email del usuario:', userEmail);
-        console.log('Nombre del usuario:', userName);
         
         // Aquí puedes actualizar el estado del componente o realizar otras acciones con los datos del usuario
       } else {
@@ -67,7 +61,7 @@ const Navbar = () => {
 }, [currentUser]);
 
   return (
-    <div className="w-full fixed top-0 z-50 bg-white dark:bg-black">      
+    <div className="w-full fixed top-0 z-50 bg-white dark:bg-black">
       <nav className="container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-0">
         <Disclosure>
           {({ open }) => (
@@ -114,7 +108,7 @@ const Navbar = () => {
                 <Disclosure.Panel className="flex flex-wrap w-full my-5 lg:hidden">
                   <>
                     {navigation.map((item, index) => (
-                      <Link key={index} href={`#${item.replace(/\s+/g, '-').toLowerCase()}`} className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-[#127cb1] focus:text-[#127cb1] focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none">
+                      <Link onClick={() => onSelectSection(item)} key={index} href={`#${item.replace(/\s+/g, '-').toLowerCase()}`} className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-[#127cb1] focus:text-[#127cb1] focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none">
                         {item}
                       </Link>
                     ))}
@@ -133,7 +127,7 @@ const Navbar = () => {
           <ul className="items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex">
             {navigation.map((menu, index) => (
               <li className="mr-3 nav__item" key={index}>
-                <Link href={`#${menu.replace(/\s+/g, '-').toLowerCase()}`} className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-[#127cb1] focus:text-[#127cb1] focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800">
+                <Link onClick={() => onSelectSection(menu)} href={`#${menu.replace(/\s+/g, '-').toLowerCase()}`} className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-[#127cb1] focus:text-[#127cb1] focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800">
                   {menu}
                 </Link>
               </li>
@@ -145,7 +139,7 @@ const Navbar = () => {
           <User   
             name={userName}
             description={(
-              <a href="#" size="sm" isExternal>
+              <a href="#" size="sm">
                 {userEmail}
               </a>
             )}

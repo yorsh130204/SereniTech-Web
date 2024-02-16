@@ -1,17 +1,26 @@
-import React, { useEffect } from 'react';
+//dashboard.js
+import React, { useEffect, useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { useRouter } from 'next/router';
 import Navbar from '../components/dashboard/navbar3';
 import CustomHead from '../components/CustomHead';
-import Hero from "../components/hero";
+import PulseSection from '../components/dashboard/pulse';
+import GpsSection from "../components/dashboard/gps";
+import AccountSection from "../components/dashboard/account";
 
 const Dashboard = () => {
   const { currentUser, logout } = useAuth();
   const router = useRouter();
+  const [selectedSection, setSelectedSection] = useState('Pulso');
+
+  const handleSelectSection = (section) => {
+    setSelectedSection(section);
+  };
 
   useEffect(() => {
     const checkAuthentication = async () => {
       if (!(currentUser && currentUser.email !== 'Guest')) {
+        router.push('/login');
       }
     };
 
@@ -20,27 +29,15 @@ const Dashboard = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentUser, router]);
 
-  const handleLogout = async () => {
-    try {
-      await logout();
-      router.push('/login');
-    } catch (error) {
-      console.error('Error logging out', error);
-    }
-  };
-
   // Check if currentUser is "Guest" before rendering dashboard content
   if (currentUser && currentUser.email !== 'Guest') {
     return (
       <>
         <CustomHead />
-        <Navbar />
-        <Hero />
-        <div className="">
-          <p>Hello, {currentUser.email}!</p>
-          <button onClick={handleLogout}>Logout</button>
-          {/* Other dashboard content */}
-        </div>
+        <Navbar onSelectSection={handleSelectSection} />
+        {selectedSection === 'Pulso' && <PulseSection />}
+        {selectedSection === 'GPS' && <GpsSection />}
+        {selectedSection === 'Cuenta' && <AccountSection />}
       </>
     );
   } else {

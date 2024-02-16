@@ -3,6 +3,7 @@ import CustomHead from '../components/CustomHead';
 import Navbar2 from "../components/navbar2";
 import { useAuth } from "../contexts/AuthContext";
 import { Mail, Lock } from 'react-feather';
+import { useRouter } from 'next/router';
 
 export default function Login() {
   const emailRef = useRef();
@@ -10,6 +11,7 @@ export default function Login() {
   const { login } = useAuth();
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -26,7 +28,7 @@ export default function Login() {
       setLoading(true);
       await login(emailRef.current.value, password);
       // Redirect to dashboard or any other page upon successful login
-      window.location.href = "/dashboard";
+      router.push('/dashboard');
     } catch (error) {
       console.error("Error al iniciar sesión", error);
       setError(error.message || "Error al iniciar sesión");

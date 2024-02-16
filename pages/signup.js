@@ -3,6 +3,7 @@ import CustomHead from '../components/CustomHead';
 import Navbar2 from "../components/navbar2";
 import { useAuth } from "../contexts/AuthContext";
 import { Mail, Lock, User } from 'react-feather';  // Agregué el ícono para el nombre
+import { useRouter } from 'next/router';
 
 export default function SignUp() {
   const emailRef = useRef();
@@ -12,6 +13,7 @@ export default function SignUp() {
   const { signup } = useAuth();
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -32,7 +34,7 @@ export default function SignUp() {
       setError('');
       setLoading(true);
       await signup(emailRef.current.value, passwordRef.current.value, nameRef.current.value);
-      window.location.href = "/dashboard";
+      router.push('/dashboard');
     } catch (error) {
       console.error("Error al crear la cuenta", error);
       setError("Error al crear la cuenta");
