@@ -8,6 +8,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react'; // Importa useEffect
 import { auth, database } from '../../config/firebase';
 import {User, Link} from "@nextui-org/react";
+import Img1 from "../../public/img/user1.png";
 
 const Navbar = () => {
   const navigation = [
@@ -144,12 +145,12 @@ const Navbar = () => {
           <User   
             name={userName}
             description={(
-              <Link href="" size="sm" isExternal>
+              <a href="#" size="sm" isExternal>
                 {userEmail}
-              </Link>
+              </a>
             )}
             avatarProps={{
-              src: "../../public/img/user1.png"
+              src: "/img/users.png",  // La ruta es relativa a la carpeta 'public'
             }}
           />
 
