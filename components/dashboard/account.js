@@ -131,7 +131,7 @@ const AccountSection = () => {
                 </CardBody>
               </Card>
             </Tab>
-            <Tab key="delete" title="Eliminar Cuenta">
+            <Tab key="delete" title="Eliminar">
               <Card>
                 <CardHeader className="text-lg font-bold">Eliminar Cuenta</CardHeader>
                 <CardBody>
