@@ -1,8 +1,11 @@
 import Image from "next/image";
 import Container from "./container";
 import heroImg from "../public/img/hero.png";
+import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
+  const { t } = useTranslation("translation");
+
   return (
     <Container className="flex flex-wrap mt-14">
       <div className="flex items-center w-full lg:w-1/2">
@@ -11,9 +14,7 @@ const Hero = () => {
           SereniApp
         </h1>
         <p className="py-5 text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300">
-          SereniApp, tanto en su versión web como móvil, está diseñada para los cuidadores de niños con TEA. Proporciona acceso a datos 
-          históricos de pulso y ubicación, permitiéndote revisar y analizar información pasada para un mejor entendimiento del bienestar 
-          de tus seres queridos. Con funciones avanzadas, podrás acceder a registros detallados y tomar decisiones informadas para garantizar su seguridad.
+          {t("translation.hero.description")}
         </p>
           <div className="flex flex-col items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row">
             <a
@@ -21,14 +22,14 @@ const Hero = () => {
               target=""
               rel="noopener"
               className="px-8 py-4 text-lg font-medium text-center text-white bg-[#0b4b7d] rounded-md transition duration-300 hover:bg-[#209ccf]">
-              Regístrate
+              {t("translation.hero.signupButton")}
             </a>
             <a
               href="/login"
               target=""
               rel="noopener"
               className="px-8 py-4 text-lg font-medium text-center text-white bg-gray-500 rounded-md transition duration-300 hover:bg-gray-600">
-              Inicia sesión
+              {t("translation.hero.loginButton")}
             </a>
           </div>
         </div>

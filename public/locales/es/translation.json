@@ -1,0 +1,43 @@
+{
+    "navbar": {
+      "serenitechBand": "SereniTech-Band",
+      "aboutUs": "Acerca de nosotros",
+      "videoOnASD": "Video sobre el TEA",
+      "testimonials": "Testimonios",
+      "faq": "P&R",
+      "login": "Iniciar sesión"
+    },
+    "info": {
+      "pretitle": "Descubre los Beneficios de SereniApp",
+      "title": "¿Por qué empezar a utilizarlo?",
+      "content": "SereniTech-Band, la solución integral para el monitoreo de personas con TEA, eleva la seguridad y autonomía. Con una interfaz intuitiva y tecnología innovadora, brinda apoyo esencial para el bienestar de las personas con TEA y sus cuidadores."
+    },
+    "aboutUsSection": {
+      "pretitle": "Acerca de nosotros",
+      "title": "Nuestro talentoso equipo",
+      "content": "Descubre la pasión y dedicación que impulsa a nuestro equipo. Estamos comprometidos con ofrecer soluciones innovadoras para brindar la mejor experiencia a nuestros usuarios. ¡Conoce a las mentes brillantes detrás de nuestro proyecto!"
+    },
+    "videoSection": {
+      "pretitle": "Mira un video sobre el autismo",
+      "title": "Descubre cómo el autismo impacta en la vida diaria",
+      "content": "Este video ofrece una visión detallada sobre el autismo y cómo impacta la vida diaria. Explora las características, desafíos y experiencias relacionadas con el autismo. Acompáñanos en este recorrido informativo para comprender mejor este espectro y fomentar la conciencia sobre el autismo."
+    },
+    "testimonialsSection": {
+      "pretitle": "Testimonios",
+      "title": "Experiencias compartidas por usuarios de SereniApp",
+      "content": "Los testimonios son una poderosa herramienta para aumentar la confianza en la marca y la conciencia. En esta sección, destacamos las experiencias de nuestros valiosos usuarios de SereniApp. Descubre cómo nuestra aplicación ha impactado positivamente en sus vidas y ha proporcionado un apoyo significativo. ¡Explora las historias de aquellos que han encontrado valor en SereniApp!"
+    },
+    "faqSection": {
+      "pretitle": "Descubre Más",
+      "title": "Preguntas Frecuentes",
+      "content": "Encuentra respuestas a las preguntas más comunes sobre SereniApp y SereniTech-Band. Aumenta la comprensión de nuestras soluciones para el cuidado de personas con TEA y descubre cómo mejorar la seguridad y bienestar con nuestra tecnología innovadora."
+    },
+    "translation": {
+      "hero": {
+        "title": "SereniApp",
+        "description": "SereniApp, tanto en su versión web como móvil, está diseñada para los cuidadores de niños con TEA. Proporciona acceso a datos históricos de pulso y ubicación, permitiéndote revisar y analizar información pasada para un mejor entendimiento del bienestar de tus seres queridos. Con funciones avanzadas, podrás acceder a registros detallados y tomar decisiones informadas para garantizar su seguridad.",
+        "signupButton": "Regístrate",
+        "loginButton": "Inicia sesión"
+      }
+    }
+  }

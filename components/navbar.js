@@ -1,15 +1,18 @@
 import Link from "next/link";
 import ThemeChanger from "./DarkSwitch";
-import Image from "next/image"
+import Image from "next/image";
 import { Disclosure } from "@headlessui/react";
+import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
+  const { t } = useTranslation("translation");
+
   const navigation = [
-    "SereniTech-Band",
-    "Acerca de nosotros",
-    "Video sobre el TEA",
-    "Testimonios",
-    "FAQ",
+    { id: "SereniTech-Band", label: t("navbar.serenitechBand") },
+    { id: "Acerca de nosotros", label: t("navbar.aboutUs") },
+    { id: "Video sobre el TEA", label: t("navbar.videoOnASD") },
+    { id: "Testimonios", label: t("navbar.testimonials") },
+    { id: "FAQ", label: t("navbar.faq") },
   ];
 
   return (
@@ -60,12 +63,12 @@ const Navbar = () => {
                 <Disclosure.Panel className="flex flex-wrap w-full my-5 lg:hidden">
                   <>
                     {navigation.map((item, index) => (
-                      <Link key={index} href={`#${item.replace(/\s+/g, '-').toLowerCase()}`} className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-[#127cb1] focus:text-[#127cb1] focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none">
-                        {item}
+                      <Link key={index} href={`#${item.id.replace(/\s+/g, '-').toLowerCase()}`} className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-[#127cb1] focus:text-[#127cb1] focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none">
+                        {item.label}
                       </Link>
                     ))}
                     <Link href="/login" className="w-50% px-6 py-2 mt-3 text-center text-white bg-[#0b4b7d] rounded-md lg:ml-5 hover:bg-[#1690c7]">
-                      Inicia sesión
+                      {t("navbar.login")}
                     </Link>
                   </>
                 </Disclosure.Panel>
@@ -79,8 +82,8 @@ const Navbar = () => {
           <ul className="items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex">
             {navigation.map((menu, index) => (
               <li className="mr-3 nav__item" key={index}>
-                <Link href={`#${menu.replace(/\s+/g, '-').toLowerCase()}`} className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-[#127cb1] focus:text-[#127cb1] focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800">
-                  {menu}
+                <Link href={`#${menu.id.replace(/\s+/g, '-').toLowerCase()}`} className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-[#127cb1] focus:text-[#127cb1] focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800">
+                  {menu.label}
                 </Link>
               </li>
             ))}
@@ -89,7 +92,7 @@ const Navbar = () => {
 
         <div className="hidden mr-3 space-x-4 lg:flex nav__item">
           <Link href="/login" className="px-6 py-2 text-white bg-[#0b4b7d] rounded-md md:ml-5 hover:bg-[#1690c7]">
-            Inicia sesión
+            {t("navbar.login")}
           </Link>
 
           <ThemeChanger />

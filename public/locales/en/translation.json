@@ -1,0 +1,43 @@
+{
+    "navbar": {
+      "serenitechBand": "SereniTech-Band",
+      "aboutUs": "About us",
+      "videoOnASD": "Video on ASD",
+      "testimonials": "Testimonials",
+      "faq": "FAQ",
+      "login": "Log in"
+    },
+    "info": {
+      "pretitle": "Discover the Benefits of SereniApp",
+      "title": "Why start using it?",
+      "content": "SereniTech-Band, the comprehensive solution for monitoring people with ASD, enhances safety and autonomy. With an intuitive interface and innovative technology, it provides essential support for the well-being of individuals with ASD and their caregivers."
+    },
+    "aboutUsSection": {
+      "pretitle": "About Us",
+      "title": "Our talented team",
+      "content": "Discover the passion and dedication that drives our team. We are committed to providing innovative solutions to offer the best experience to our users. Get to know the bright minds behind our project!"
+    },
+    "videoSection": {
+      "pretitle": "Watch a video about autism",
+      "title": "Discover how autism impacts daily life",
+      "content": "This video provides a detailed insight into autism and how it impacts daily life. Explore the characteristics, challenges, and experiences related to autism. Join us on this informative journey to better understand this spectrum and promote awareness about autism."
+    },
+    "testimonialsSection": {
+      "pretitle": "Testimonials",
+      "title": "Experiences shared by SereniApp users",
+      "content": "Testimonials are a powerful tool to build confidence in the brand and awareness. In this section, we highlight the experiences of our valuable SereniApp users. Discover how our application has positively impacted their lives and provided significant support. Explore the stories of those who have found value in SereniApp!"
+    },
+    "faqSection": {
+      "pretitle": "Discover More",
+      "title": "Frequently Asked Questions",
+      "content": "Find answers to the most common questions about SereniApp and SereniTech-Band. Increase understanding of our solutions for the care of people with ASD and discover how to improve safety and well-being with our innovative technology."
+    },
+    "translation": {
+      "hero": {
+        "title": "SereniApp",
+        "description": "SereniApp, both in its web and mobile versions, is designed for caregivers of children with ASD. Provides access to historical pulse and location data, allowing you to review and analyze past information for a better understanding of your loved ones' well-being. With advanced features, you can access detailed records and make informed decisions to ensure their safety.",
+        "signupButton": "Sign Up",
+        "loginButton": "Log In"
+      }
+    }
+  }
