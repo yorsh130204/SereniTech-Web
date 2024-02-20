@@ -2,13 +2,17 @@ import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 import Container from "./container";
+import { useTranslation } from 'react-i18next';
 
 export default function Footer() {
+  const { t } = useTranslation("translation");
+
   const navigation = [
-    "SereniTech-Band",
-    "Acerca de nosotros",
-    "Testimonios",
-    "FAQ",
+    { id: "SereniTech-Band", label: t("navbar.serenitechBand") },
+    { id: "Acerca de nosotros", label: t("navbar.aboutUs") },
+    { id: "Video sobre el TEA", label: t("navbar.videoOnASD") },
+    { id: "Testimonios", label: t("navbar.testimonials") },
+    { id: "FAQ", label: t("navbar.faq") },
   ];
 
   return (
@@ -31,18 +35,15 @@ export default function Footer() {
             </div>
 
             <div className="max-w-md mt-4 text-gray-500 dark:text-gray-400">
-              SereniApp es tu asistente personalizado en el cuidado de tus seres queridos con TEA.
-              A través de avanzadas alertas y un monitoreo en tiempo real, podrás estar al tanto de su
-              bienestar donde sea que estén, dándote la capacidad de responder ante cualquier
-              situación para su mayor seguridad.
+              {t("footer.t1")}
             </div>
           </div>
 
           <div className="lg:col-span-3 flex justify-end">
             <div className="flex flex-col -mt-2 lg:mt-0 mr-10">
               {navigation.map((item, index) => (
-                <Link key={index} href={`#${item.replace(/\s+/g, '-').toLowerCase()}`} className="px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-[#127cb1] focus:text-[#127cb1] focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700">
-                  {item}
+                <Link key={index} href={`#${item.id.replace(/\s+/g, '-').toLowerCase()}`} className="px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-[#127cb1] focus:text-[#127cb1] focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700">
+                  {item.label}
                 </Link>
               ))}
             </div>
@@ -59,12 +60,14 @@ export default function Footer() {
 }
 
 const Backlink = () => {
+  const { t } = useTranslation("translation");
+
   return (
     <a
       href="#"
       rel="noopener"
-      className="absolute flex px-3 py-1 space-x-2 text-sm font-semibold text-gray-900 bg-white border border-gray-300 rounded shadow-sm place-items-center left-5 bottom-5 dark:bg-trueGray-900 dark:border-trueGray-700 dark:text-trueGray-300">
-      <span>Volver arriba</span>
+      className="absolute flex px-3 py-1 space-x-2 text-sm font-semibold text-gray-900 bg-white border border-gray-300 rounded shadow-sm place-items-center left-16 bottom-5 dark:bg-trueGray-900 dark:border-trueGray-700 dark:text-trueGray-300">
+      <span>{t("footer.t2")}</span>
     </a>
   );
 };

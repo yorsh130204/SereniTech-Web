@@ -7,6 +7,7 @@ import CustomHead from '../components/CustomHead';
 import PulseSection from '../components/dashboard/pulse';
 import GpsSection from "../components/dashboard/gps";
 import AccountSection from "../components/dashboard/account";
+import LanguageButton from "../components/translate"
 
 const Dashboard = () => {
   const { currentUser, logout } = useAuth();
@@ -38,6 +39,7 @@ const Dashboard = () => {
         {selectedSection === 'Pulso' && <PulseSection />}
         {selectedSection === 'GPS' && <GpsSection />}
         {selectedSection === 'Cuenta' && <AccountSection />}
+        <LanguageButton />
       </>
     );
   } else {

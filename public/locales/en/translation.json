@@ -39,5 +39,170 @@
         "signupButton": "Sign Up",
         "loginButton": "Log In"
       }
-    }
-  }
+    },
+    "benefitOne": {
+      "title": "Protect Your Loved Ones with SereniTech-Band",
+      "desc": "SereniTech-Band is a comprehensive solution for monitoring individuals with ASD. It enhances safety and autonomy through an intuitive interface and innovative technology, providing essential support for the well-being of individuals with ASD and their caregivers.",
+      "title1": "Take Care of Their Health with SereniTech-App",
+      "desc1": "Use SereniTech-App to monitor and care for the health of your loved ones with ASD. The application provides specific tools and functions to ensure their well-being.",
+      "title2": "Keep Them Close with SereniTech-App",
+      "desc2": "SereniTech-App allows you to keep your loved ones close to you, even from a distance. With location and alert features, you'll always be connected and ready to provide support.",
+      "title3": "Record Historical Data with SereniTech-App and SereniTech-Band",
+      "desc3": "SereniTech-App and SereniTech-Band enable you to record historical data for a detailed analysis of the health and behavior of your loved ones."
+    },
+    "benefitTwo": {
+      "title": "Everything in One Place with SereniTech-Band and SereniTech-App",
+      "desc": "Use SereniTech-Band and SereniTech-App to have all the tools you need in one place. These products offer a comprehensive solution for monitoring individuals with ASD, providing advanced features and essential benefits.",
+      "title1": "Pulse Sensor with SereniTech-Band",
+      "desc1": "SereniTech-Band features a pulse sensor to provide vital information about the health of your loved ones. Monitor the pulse continuously to ensure their well-being.",
+      "title2": "Location Sensor with SereniTech-App",
+      "desc2": "SereniTech-App uses a location sensor to allow you to know the whereabouts of your loved ones at all times. This feature provides peace of mind and security.",
+      "title3": "Record Historical Data with SereniTech-App and SereniTech-Band",
+      "desc3": "Access detailed analytics about the health and behavior of your loved ones through SereniTech-App and SereniTech-Band. These tools provide valuable information for daily care."
+    },
+    "teamMembers": {
+      "title": "Our Team",
+      "e1": {
+        "name": "Jorge Alberto Valenzuela Castañon",
+        "role": "IoT, Frontend, and Backend",
+        "description": "Information Technology student with experience in IoT, frontend, and backend development."
+      },
+      "e2": {
+        "name": "Gael Flores López",
+        "role": "Frontend Developer",
+        "description": "Student specialized in frontend development."
+      },
+      "e3": {
+        "name": "Gerardo Alberto Zapata Sanchez",
+        "role": "Backend Developer",
+        "description": "Student specialized in backend development."
+      },
+      "e4": {
+        "name": "Dayana Jatziry Cruz Garza",
+        "role": "IoT Specialist",
+        "description": "Student focused on IoT solutions development."
+      }
+    },
+    "testimonialsData": {
+      "testimonial1": {
+        "text": "SereniApp has transformed the way I care for my little one with ASD. Access to historical pulse and location data brings me peace of mind and allows me to provide the best possible care.",
+        "author": "Ana García",
+        "title": "Caregiver at SereniApp"
+      },
+      "testimonial2": {
+        "text": "The technology of SereniTech-Band is a revolution for the care of my son with ASD. I feel more connected and secure, knowing that his autonomy is fostered with this innovative technology.",
+        "author": "Javier Martínez",
+        "title": "Parent of SereniTech-Band User"
+      },
+      "testimonial3": {
+        "text": "SereniApp simplifies my life as a caregiver for my child with ASD. I would recommend this application to anyone looking to improve the mental well-being of children with ASD.",
+        "author": "María Rodríguez",
+        "title": "Caregiver at SereniApp"
+      },
+      "testimonial4": {
+        "text": "The integration of SereniTech-Band into my son's daily routine has been incredibly beneficial. It's a technological marvel that has significantly improved his safety and well-being.",
+        "author": "Carlos Pérez",
+        "title": "Parent of SereniTech-Band User"
+      },
+      "testimonial5": {
+        "text": "SereniApp has exceeded my expectations. The variety of resources and the intuitive interface make it exceptional for the care of children with ASD.",
+        "author": "Laura Gómez",
+        "title": "Caregiver at SereniApp"
+      }
+    },
+    "faqdata": {
+      "faq1": {
+        "question": "¿Is SereniApp completely free?",
+        "answer": "Yes, SereniApp is completely free for caregivers of children with Autism Spectrum Disorder (ASD)."
+      },
+      "faq2": {
+        "question": "How does SereniTech-Band monitor individuals with ASD?",
+        "answer": "SereniTech-Band uses innovative technology to enhance the safety and autonomy of individuals with Autism Spectrum Disorder (ASD). It provides advanced features for constant monitoring and overall well-being."
+      },
+      "faq3": {
+        "question": "What are the key features of SereniTech-Band?",
+        "answer": "SereniTech-Band features a pulse sensor for health monitoring, as well as a location sensor to provide information about the individual's whereabouts. Additionally, it records historical data for detailed analysis."
+      },
+      "faq4": {
+        "question": "Does SereniTech-Band offer specific functionalities for caregivers?",
+        "answer": "Yes, SereniTech-Band provides caregivers with access to historical pulse and location data, allowing them to review past information for a better understanding of the well-being of individuals with ASD."
+      }
+    },
+    "cta": {
+      "title1": "Ready to try SereniApp?",
+      "title2": "Sign up now and enhance the caregiving experience.",
+      "title3": "Sign Up"
+    },
+    "footer": {
+      "t1": "SereniApp is your personalized assistant in caring for your loved ones with ASD. Through advanced alerts and real-time monitoring, you can stay informed about their well-being wherever they are, giving you the ability to respond to any situation for their safety.",
+      "t2": "Back to Top"
+    },
+    "popup": {
+      "error": "Client error. Check the console for more information",
+      "t1": "Open contact",
+      "t2": "How can we assist you?",
+      "t3": "Full Name:",
+      "t5": "Email:",
+      "t8": "Your message",
+      "t9": "Type your message",
+      "t10": "Send message",
+      "t11": "Message sent successfully",
+      "t12": "Back",
+      "t13": "Oops, something went wrong!"
+    },
+    "iniciar": {
+      "e1": "The password must be at least 8 characters long.",
+      "e2": "Error signing in",
+      "t1": "Password:",
+      "t2": "Minimum 8 characters",
+      "t3": "Don't have an account?"
+    },
+    "registrar": {
+      "t1": "Passwords do not match",
+      "t2": "Confirm password:",
+      "t3": "Already have an account?"
+    },
+    "navbar3": {
+      "pulso": "Pulse",
+      "gps": "GPS",
+      "cuenta": "Account",
+      "cerrar": "Logout"
+    },
+    "accountSection": {
+      "pageTitle": "Account",
+      "tabs": {
+        "name": {
+          "label": "Name",
+          "header": "Change Name",
+          "newNameLabel": "New name:",
+          "newNamePlaceholder": "Enter the new name",
+          "updateButton": "Update Name"
+        },
+        "password": {
+          "label": "Password",
+          "header": "Change Password",
+          "newPasswordLabel": "New password:",
+          "newPasswordPlaceholder": "Enter the new password",
+          "confirmPasswordLabel": "Confirm password:",
+          "confirmPasswordPlaceholder": "Confirm the new password",
+          "updateButton": "Update Password"
+        },
+        "delete": {
+          "label": "Delete",
+          "header": "Delete Account",
+          "confirmationPlaceholder": "Type 'Delete Account' to confirm",
+          "deleteButton": "Confirm Deletion"
+        }
+      },
+      "chipMessages": {
+        "successNameUpdate": "Name updated successfully.",
+        "errorNameUpdate": "Error updating name: ",
+        "passwordMismatch": "The new password and confirmation do not match.",
+        "successPasswordUpdate": "Password updated successfully.",
+        "errorPasswordUpdate": "Error updating password: ",
+        "incorrectConfirmationText": "Incorrect confirmation text. Please type 'Delete Account'.",
+        "successAccountDelete": "Account deleted successfully.",
+        "errorAccountDelete": "Error deleting account: "
+      }
+    }                      
+}

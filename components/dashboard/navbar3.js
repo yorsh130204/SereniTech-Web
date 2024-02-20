@@ -8,12 +8,16 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react'; // Importa useEffect
 import { auth, database } from '../../config/firebase';
 import {User, Link} from "@nextui-org/react";
+import { useTranslation } from 'react-i18next';
+
 
 const Navbar = ({ onSelectSection }) => {
+  const { t } = useTranslation("translation");
+
   const navigation = [
-    "Pulso",
-    "GPS",
-    "Cuenta",
+    { id: "Pulso", label: t("navbar3.pulso") },
+    { id: "GPS", label: t("navbar3.gps") },
+    { id: "Cuenta", label: t("navbar3.cuenta") },
   ];
 
   const { currentUser, logout } = useAuth();
@@ -108,12 +112,12 @@ const Navbar = ({ onSelectSection }) => {
                 <Disclosure.Panel className="flex flex-wrap w-full my-5 lg:hidden">
                   <>
                     {navigation.map((item, index) => (
-                      <Link onClick={() => onSelectSection(item)} key={index} href={`#${item.replace(/\s+/g, '-').toLowerCase()}`} className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-[#127cb1] focus:text-[#127cb1] focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none">
-                        {item}
+                      <Link onClick={() => onSelectSection(item.id)} key={index} href={`#${item.id.replace(/\s+/g, '-').toLowerCase()}`} className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-[#127cb1] focus:text-[#127cb1] focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none">
+                        {item.label}
                       </Link>
                     ))}
                     <Button onClick={handleLogout} className="w-50% px-6 py-2 mt-3 text-center text-white bg-[#0b4b7d] rounded-md lg:ml-5 hover:bg-[#1690c7]">
-                      Cerrar sesión
+                      {t("navbar3.cerrar")}
                     </Button>
                   </>
                 </Disclosure.Panel>
@@ -127,8 +131,8 @@ const Navbar = ({ onSelectSection }) => {
           <ul className="items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex">
             {navigation.map((menu, index) => (
               <li className="mr-3 nav__item" key={index}>
-                <Link onClick={() => onSelectSection(menu)} href={`#${menu.replace(/\s+/g, '-').toLowerCase()}`} className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-[#127cb1] focus:text-[#127cb1] focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800">
-                  {menu}
+                <Link onClick={() => onSelectSection(menu.id)} href={`#${menu.id.replace(/\s+/g, '-').toLowerCase()}`} className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-[#127cb1] focus:text-[#127cb1] focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800">
+                  {menu.label}
                 </Link>
               </li>
             ))}
@@ -149,7 +153,7 @@ const Navbar = ({ onSelectSection }) => {
           />
 
           <Button onClick={handleLogout} className="px-6 py-2 text-white bg-[#0b4b7d] rounded-md md:ml-5 hover:bg-[#1690c7]">
-            Cerrar sesión
+            {t("navbar3.cerrar")}
           </Button>
 
           <ThemeChanger />

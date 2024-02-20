@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { useForm, useWatch } from "react-hook-form";
 import { Disclosure, Transition } from "@headlessui/react";
+import { useTranslation } from 'react-i18next';
 
 const PopupWidget = () => {
+  const { t } = useTranslation("translation");
+
   const {
     register,
     handleSubmit,
@@ -42,7 +45,7 @@ const PopupWidget = () => {
       })
       .catch((error) => {
         setIsSuccess(false);
-        setMessage("Error del cliente. Consulta la consola para obtener más información");
+        setMessage(t("popup.error"));
         console.log(error);
       });
   };
@@ -52,8 +55,8 @@ const PopupWidget = () => {
       <Disclosure>
         {({ open }) => (
           <>
-            <Disclosure.Button className="fixed z-40 flex items-center justify-center transition duration-300 bg-[#0b4b7d] rounded-full shadow-lg right-5 bottom-5 w-14 h-14 focus:outline-none hover:bg-[#1690c7] focus:bg-[#0b4b7d] ease ">
-              <span className="sr-only">Abrir contacto</span>
+            <Disclosure.Button className="fixed z-40 flex items-center justify-center transition duration-300 bg-[#0b4b7d] rounded-full shadow-lg right-5 bottom-5 w-14 h-14 focus:outline-none hover:bg-[#1690c7] focus:bg-[#0b4b7d] focus:hover:bg-[#1690c7] ease ">
+              <span className="sr-only">{t("popup.t1")}</span>
               <Transition
                 show={!open}
                 enter="transition duration-200 transform ease"
@@ -107,7 +110,7 @@ const PopupWidget = () => {
               leaveTo="opacity-0 translate-y-5">
               <Disclosure.Panel className=" flex flex-col  overflow-hidden left-0 h-full w-full sm:w-[350px] min-h-[250px] sm:h-[600px] border border-gray-300 dark:border-gray-800 bg-white shadow-2xl rounded-md sm:max-h-[calc(100vh-120px)]">
                 <div className="flex flex-col items-center justify-center h-32 p-5 bg-[#0b4b7d]">
-                  <h3 className="text-lg text-white">¿Cómo te podemos ayudar?</h3>
+                  <h3 className="text-lg text-white">{t("popup.t2")}</h3>
                 </div>
                 <div className="flex-grow h-full p-6 overflow-auto bg-gray-50 dark:bg-trueGray-700">
                   {!isSubmitSuccessful && (
@@ -116,7 +119,7 @@ const PopupWidget = () => {
                         <label
                           htmlFor="full_name"
                           className="block mb-2 text-sm text-gray-600 dark:text-trueGray-200">
-                          Nombre completo
+                          {t("popup.t3")}
                         </label>
                         <input
                           type="text"
@@ -142,7 +145,7 @@ const PopupWidget = () => {
                         <label
                           htmlFor="email"
                           className="block mb-2 text-sm text-gray-600 dark:text-trueGray-200">
-                          Correo electrónico
+                          {t("popup.t5")}
                         </label>
                         <input
                           type="email"
@@ -172,7 +175,7 @@ const PopupWidget = () => {
                         <label
                           htmlFor="message"
                           className="block mb-2 text-sm text-gray-600 dark:text-trueGray-200">
-                          Su mensaje
+                          {t("popup.t8")}
                         </label>
 
                         <textarea
@@ -181,7 +184,7 @@ const PopupWidget = () => {
                           {...register("message", {
                             required: "Escriba su mensaje", // Mensaje de error personalizado
                           })}
-                          placeholder="Su mensaje"
+                          placeholder={t("popup.t9")}
                           className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md h-28 focus:outline-none focus:ring dark:bg-trueGray-400 dark:placeholder:text-trueGray-300 ${errors.message
                             ? "border-red-600 focus:border-red-600 ring-red-100"
                             : "border-gray-300 focus:border-[#0b4b7d] ring-indigo-100"
@@ -222,7 +225,7 @@ const PopupWidget = () => {
                             ></path>
                           </svg>
                         ) : (
-                          "Enviar mensaje"
+                          t("popup.t10")
                         )}
                       </button>
                       </div>
@@ -244,13 +247,13 @@ const PopupWidget = () => {
                         />
                       </svg>
                       <h3 className="py-5 text-xl text-green-500">
-                        Mensaje enviado exitosamente
+                      {t("popup.t11")}
                       </h3>
                       <p className="text-gray-700 md:px-3">{message}</p>
                       <button
                         className="mt-6 text-[#0b4b7d] focus:outline-none"
                         onClick={() => reset()}>
-                        Volver
+                        {t("popup.t12")}
                       </button>
                     </div>
                   )}
@@ -271,13 +274,13 @@ const PopupWidget = () => {
                       </svg>
 
                       <h3 className="text-xl text-red-400 py-7">
-                        ¡Ups, algo salió mal!
+                        {t("popup.t13")}
                       </h3>
                       <p className="text-gray-700 md:px-3">{message}</p>
                       <button
                         className="mt-6 text-[#0b4b7d] focus:outline-none"
                         onClick={() => reset()}>
-                        Volver
+                        {t("popup.t12")}
                       </button>
                     </div>
                   )}

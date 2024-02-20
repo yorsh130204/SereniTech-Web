@@ -1,33 +1,35 @@
 import React from 'react';
 import { AcademicCapIcon } from "@heroicons/react/24/solid";
 import Container from "./container";
+import { useTranslation } from 'react-i18next';
 
 const AboutUsSection = () => {
-
+  const { t } = useTranslation("translation");
+  
   // Información de los integrantes del proyecto
   const teamMembers = [
     {
-      name: 'Jorge Alberto Valenzuela Castañon',
-      role: 'IoT, Frontend y Backend',
-      description: 'Estudiante de Tecnologías de la Información con experiencia en IoT, desarrollo frontend y backend.',
+      name: t("teamMembers.e1.name"),
+      role: t("teamMembers.e1.role"),
+      description: t("teamMembers.e1.description"),
       icon: <AcademicCapIcon className="w-12 h-12 text-gray-700" />,
     },
     {
-      name: 'Gael Flores López',
-      role: 'Desarrollador Frontend',
-      description: 'Estudiante especializado en el desarrollo frontend.',
+      name: t("teamMembers.e2.name"),
+      role: t("teamMembers.e2.role"),
+      description: t("teamMembers.e2.description"),
       icon: <AcademicCapIcon className="w-12 h-12 text-gray-700" />,
     },
     {
-      name: 'Gerardo Alberto Zapata Sanchez',
-      role: 'Desarrollador Backend',
-      description: 'Estudiante especializado en el desarrollo backend.',
+      name: t("teamMembers.e3.name"),
+      role: t("teamMembers.e3.role"),
+      description: t("teamMembers.e3.description"),
       icon: <AcademicCapIcon className="w-12 h-12 text-gray-700" />,
     },
     {
-      name: 'Dayana Jatziry Cruz Garza',
-      role: 'Especialista en IoT',
-      description: 'Estudiante enfocada en el desarrollo de soluciones IoT.',
+      name: t("teamMembers.e4.name"),
+      role: t("teamMembers.e4.role"),
+      description: t("teamMembers.e4.description"),
       icon: <AcademicCapIcon className="w-12 h-12 text-gray-700" />,
     },
   ];
@@ -35,7 +37,7 @@ const AboutUsSection = () => {
   return (
     <Container className="py-16 bg-gray-100 dark:bg-transparent rounded-[20px]">
       <div className="mx-auto">
-        <h2 className="text-4xl font-bold mb-12 text-center text-gray-800 dark:text-white">Nuestro Equipo</h2>
+        <h2 className="text-4xl font-bold mb-12 text-center text-gray-800 dark:text-white">{t("teamMembers.title")}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 m-8">
           {teamMembers.map((member, index) => (
             <div key={index} className={`p-8 rounded-md shadow-md flex flex-col items-center transition duration-300 transform hover:scale-105 dark:bg-[#0b4b7d] bg-white `}>

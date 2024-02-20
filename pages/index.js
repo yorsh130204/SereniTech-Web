@@ -2,7 +2,7 @@ import Hero from "../components/hero";
 import Navbar from "../components/navbar";
 import SectionTitle from "../components/sectionTitle";
 
-import { benefitOne, benefitTwo } from "../components/data";
+import BenefitData from "../components/data";
 import Video from "../components/video";
 import Benefits from "../components/benefits";
 import Footer from "../components/footer";
@@ -17,6 +17,7 @@ import { useTranslation } from 'react-i18next';
 
 const Home = () => {
   const { t } = useTranslation("translation");
+  const { benefitOne, benefitTwo } = BenefitData();
 
   return (
     <>

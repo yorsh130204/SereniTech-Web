@@ -3,8 +3,11 @@ import React, { useState } from 'react';
 import Container from "../container";
 import { Input, Button, Chip, Tabs, Tab, Card, CardHeader, CardBody } from '@nextui-org/react';
 import { auth, database } from '../../config/firebase';
+import { useTranslation } from 'react-i18next';
 
 const AccountSection = () => {
+  const { t } = useTranslation("translation");
+
   const currentUser = auth.currentUser;
   const [newName, setNewName] = useState(currentUser.displayName || '');
   const [newEmail, setNewEmail] = useState(currentUser.email || '');
@@ -20,38 +23,38 @@ const AccountSection = () => {
     try {
       await database.ref(`users/${currentUser.uid}`).update({ name: newName });
       await currentUser.updateProfile({ displayName: newName });
-      showChip('Nombre actualizado exitosamente.', 'success');
+      showChip(t("chipMessages.successNameUpdate"), 'success');
     } catch (error) {
-      showChip('Error al actualizar el nombre: ' + error.message, 'error');
+      showChip(t("chipMessages.errorNameUpdate") + error.message, 'error');
     }
   };
 
   const handleUpdatePassword = async () => {
     if (newPassword !== confirmPassword) {
-      showChip('La nueva contraseña y la confirmación no coinciden.', 'error');
+      showChip(t("chipMessages.passwordMismatch"), 'error');
       return;
     }
 
     try {
       await currentUser.updatePassword(newPassword);
-      showChip('Contraseña actualizada exitosamente.', 'success');
+      showChip(t("chipMessages.successPasswordUpdate"), 'success');
     } catch (error) {
-      showChip('Error al actualizar la contraseña: ' + error.message, 'error');
+      showChip(t("chipMessages.errorPasswordUpdate") + error.message, 'error');
     }
   };
 
   const handleDeleteAccount = async () => {
-    if (confirmationText.trim() !== 'Eliminar Cuenta') {
-      showChip('Texto de confirmación incorrecto. Por favor, escribe "Eliminar Cuenta".', 'error');
+    if (confirmationText.trim() !== t("delete.header")) {
+      showChip(t("chipMessages.incorrectConfirmationText"), 'error');
       return;
     }
 
     try {
       await database.ref(`users/${currentUser.uid}`).remove();
       await currentUser.delete();
-      showChip('Cuenta eliminada exitosamente.', 'success');
+      showChip(t("chipMessages.successAccountDelete"), 'success');
     } catch (error) {
-      showChip('Error al eliminar la cuenta: ' + error.message, 'error');
+      showChip(t("chipMessages.errorAccountDelete") + error.message, 'error');
     }
   };
 
@@ -69,7 +72,7 @@ const AccountSection = () => {
   return (
     <Container className="flex flex-wrap justify-center mt-20">
       <div className="max-w-md w-full space-y-8">
-        <h1 className="text-4xl font-bold text-center">Cuenta</h1>
+        <h1 className="text-4xl font-bold text-center">{t("accountSection.pageTitle")}</h1>
   
         {/* Tabs para cambiar entre secciones */}
         <div className="mx-auto max-w-md">
@@ -81,22 +84,22 @@ const AccountSection = () => {
             activeKey={activeTab}
             onChange={handleTabChange}
           >
-            <Tab key="name" title="Nombre">
+            <Tab key="name" title={t("accountSection.tabs.name.label")}>
               <Card>
-                <CardHeader className="text-lg font-bold">Cambiar Nombre</CardHeader>
+                <CardHeader className="text-lg font-bold">{t("accountSection.tabs.name.header")}</CardHeader>
                 <CardBody>
                   {/* Formulario para cambiar el nombre */}
                   <div>
-                    <label className="text-md">Nuevo nombre:</label>
+                    <label className="text-md">{t("accountSection.tabs.name.newNameLabel")}</label>
                     <Input
                       type="text"
                       className="mt-2"
                       value={newName}
                       onChange={(e) => setNewName(e.target.value)}
-                      placeholder="Ingresa el nuevo nombre"
+                      placeholder={t("accountSection.tabs.name.newNamePlaceholder")}
                     />
                     <Button onClick={handleUpdateName} className="mt-6">
-                      Actualizar Nombre
+                      {t("accountSection.tabs.name.updateButton")}
                     </Button>
                   </div>
                 </CardBody>

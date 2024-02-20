@@ -1,43 +1,208 @@
 {
-    "navbar": {
-      "serenitechBand": "SereniTech-Band",
-      "aboutUs": "Acerca de nosotros",
-      "videoOnASD": "Video sobre el TEA",
-      "testimonials": "Testimonios",
-      "faq": "P&R",
-      "login": "Iniciar sesión"
+  "navbar": {
+    "serenitechBand": "SereniTech-Band",
+    "aboutUs": "Acerca de nosotros",
+    "videoOnASD": "Video sobre el TEA",
+    "testimonials": "Testimonios",
+    "faq": "P&R",
+    "login": "Iniciar sesión"
+  },
+  "info": {
+    "pretitle": "Descubre los Beneficios de SereniApp",
+    "title": "¿Por qué empezar a utilizarlo?",
+    "content": "SereniTech-Band, la solución integral para el monitoreo de personas con TEA, eleva la seguridad y autonomía. Con una interfaz intuitiva y tecnología innovadora, brinda apoyo esencial para el bienestar de las personas con TEA y sus cuidadores."
+  },
+  "aboutUsSection": {
+    "pretitle": "Acerca de nosotros",
+    "title": "Nuestro talentoso equipo",
+    "content": "Descubre la pasión y dedicación que impulsa a nuestro equipo. Estamos comprometidos con ofrecer soluciones innovadoras para brindar la mejor experiencia a nuestros usuarios. ¡Conoce a las mentes brillantes detrás de nuestro proyecto!"
+  },
+  "videoSection": {
+    "pretitle": "Mira un video sobre el autismo",
+    "title": "Descubre cómo el autismo impacta en la vida diaria",
+    "content": "Este video ofrece una visión detallada sobre el autismo y cómo impacta la vida diaria. Explora las características, desafíos y experiencias relacionadas con el autismo. Acompáñanos en este recorrido informativo para comprender mejor este espectro y fomentar la conciencia sobre el autismo."
+  },
+  "testimonialsSection": {
+    "pretitle": "Testimonios",
+    "title": "Experiencias compartidas por usuarios de SereniApp",
+    "content": "Los testimonios son una poderosa herramienta para aumentar la confianza en la marca y la conciencia. En esta sección, destacamos las experiencias de nuestros valiosos usuarios de SereniApp. Descubre cómo nuestra aplicación ha impactado positivamente en sus vidas y ha proporcionado un apoyo significativo. ¡Explora las historias de aquellos que han encontrado valor en SereniApp!"
+  },
+  "faqSection": {
+    "pretitle": "Descubre Más",
+    "title": "Preguntas Frecuentes",
+    "content": "Encuentra respuestas a las preguntas más comunes sobre SereniApp y SereniTech-Band. Aumenta la comprensión de nuestras soluciones para el cuidado de personas con TEA y descubre cómo mejorar la seguridad y bienestar con nuestra tecnología innovadora."
+  },
+  "translation": {
+    "hero": {
+      "title": "SereniApp",
+      "description": "SereniApp, tanto en su versión web como móvil, está diseñada para los cuidadores de niños con TEA. Proporciona acceso a datos históricos de pulso y ubicación, permitiéndote revisar y analizar información pasada para un mejor entendimiento del bienestar de tus seres queridos. Con funciones avanzadas, podrás acceder a registros detallados y tomar decisiones informadas para garantizar su seguridad.",
+      "signupButton": "Regístrate",
+      "loginButton": "Inicia sesión"
+    }
+  },
+  "benefitOne": {
+    "title": "Protege a tus seres queridos con SereniTech-Band",
+    "desc": "SereniTech-Band es una solución integral para el monitoreo de personas con TEA. Mejora la seguridad y autonomía mediante una interfaz intuitiva y tecnología innovadora, ofreciendo apoyo esencial para el bienestar de las personas con TEA y sus cuidadores.",
+    "title1": "Cuida su salud con SereniTech-App",
+    "desc1": "Utiliza SereniTech-App para monitorear y cuidar la salud de tus seres queridos con TEA. La aplicación proporciona herramientas y funciones específicas para garantizar su bienestar.",
+    "title2": "Mantenlos cerca de ti con SereniTech-App",
+    "desc2": "SereniTech-App te permite mantener a tus seres queridos cerca de ti, incluso a distancia. Con funciones de ubicación y alertas, siempre estarás conectado y preparado para brindar apoyo.",
+    "title3": "Registra datos históricos con SereniTech-App y SereniTech-Band",
+    "desc3": "SereniTech-App y SereniTech-Band permiten registrar datos históricos para un análisis detallado de la salud y el comportamiento de tus seres queridos."
+  },
+  "benefitTwo": {
+    "title": "Todo en un solo lugar con SereniTech-Band y SereniTech-App",
+    "desc": "Utiliza SereniTech-Band y SereniTech-App para tener todas las herramientas que necesitas en un solo lugar. Estos productos ofrecen una solución integral para el monitoreo de personas con TEA, proporcionando funcionalidades avanzadas y beneficios esenciales.",
+    "title1": "Sensor de pulso con SereniTech-Band",
+    "desc1": "SereniTech-Band cuenta con un sensor de pulso para proporcionar información vital sobre la salud de tus seres queridos. Monitorea el pulso de manera continua para garantizar su bienestar.",
+    "title2": "Sensor de ubicación con SereniTech-App",
+    "desc2": "SereniTech-App utiliza un sensor de ubicación para permitirte conocer la ubicación de tus seres queridos en todo momento. Esta función brinda tranquilidad y seguridad.",
+    "title3": "Registra datos históricos con SereniTech-App y SereniTech-Band",
+    "desc3": "Accede a analíticas detalladas sobre la salud y el comportamiento de tus seres queridos a través de SereniTech-App y SereniTech-Band. Estas herramientas te brindan información valiosa para el cuidado diario."
+  },
+  "teamMembers": {
+    "title": "Nuestro Equipo",
+    "e1": {
+      "name": "Jorge Alberto Valenzuela Castañon",
+      "role": "IoT, Frontend y Backend",
+      "description": "Estudiante de Tecnologías de la Información con experiencia en IoT, desarrollo frontend y backend."
     },
-    "info": {
-      "pretitle": "Descubre los Beneficios de SereniApp",
-      "title": "¿Por qué empezar a utilizarlo?",
-      "content": "SereniTech-Band, la solución integral para el monitoreo de personas con TEA, eleva la seguridad y autonomía. Con una interfaz intuitiva y tecnología innovadora, brinda apoyo esencial para el bienestar de las personas con TEA y sus cuidadores."
+    "e2": {
+      "name": "Gael Flores López",
+      "role": "Desarrollador Frontend",
+      "description": "Estudiante especializado en el desarrollo frontend."
     },
-    "aboutUsSection": {
-      "pretitle": "Acerca de nosotros",
-      "title": "Nuestro talentoso equipo",
-      "content": "Descubre la pasión y dedicación que impulsa a nuestro equipo. Estamos comprometidos con ofrecer soluciones innovadoras para brindar la mejor experiencia a nuestros usuarios. ¡Conoce a las mentes brillantes detrás de nuestro proyecto!"
+    "e3": {
+      "name": "Gerardo Alberto Zapata Sanchez",
+      "role": "Desarrollador Backend",
+      "description": "Estudiante especializado en el desarrollo backend."
     },
-    "videoSection": {
-      "pretitle": "Mira un video sobre el autismo",
-      "title": "Descubre cómo el autismo impacta en la vida diaria",
-      "content": "Este video ofrece una visión detallada sobre el autismo y cómo impacta la vida diaria. Explora las características, desafíos y experiencias relacionadas con el autismo. Acompáñanos en este recorrido informativo para comprender mejor este espectro y fomentar la conciencia sobre el autismo."
+    "e4": {
+      "name": "Dayana Jatziry Cruz Garza",
+      "role": "Especialista en IoT",
+      "description": "Estudiante enfocada en el desarrollo de soluciones IoT."
+    }
+  },
+  "testimonialsData": {
+    "testimonial1": {
+      "text": "SereniApp ha transformado la manera en que cuido a mi pequeño con TEA. Acceder a datos históricos de pulso y localización me brinda tranquilidad y me permite ofrecerle el mejor cuidado posible.",
+      "author": "Ana García",
+      "title": "Cuidadora en SereniApp"
     },
-    "testimonialsSection": {
-      "pretitle": "Testimonios",
-      "title": "Experiencias compartidas por usuarios de SereniApp",
-      "content": "Los testimonios son una poderosa herramienta para aumentar la confianza en la marca y la conciencia. En esta sección, destacamos las experiencias de nuestros valiosos usuarios de SereniApp. Descubre cómo nuestra aplicación ha impactado positivamente en sus vidas y ha proporcionado un apoyo significativo. ¡Explora las historias de aquellos que han encontrado valor en SereniApp!"
+    "testimonial2": {
+      "text": "La tecnología de SereniTech-Band es una revolución para el cuidado de mi hijo con TEA. Me siento más conectado y seguro, sabiendo que su autonomía se ve fomentada con esta tecnología innovadora.",
+      "author": "Javier Martínez",
+      "title": "Padre de Usuario de SereniTech-Band"
     },
-    "faqSection": {
-      "pretitle": "Descubre Más",
-      "title": "Preguntas Frecuentes",
-      "content": "Encuentra respuestas a las preguntas más comunes sobre SereniApp y SereniTech-Band. Aumenta la comprensión de nuestras soluciones para el cuidado de personas con TEA y descubre cómo mejorar la seguridad y bienestar con nuestra tecnología innovadora."
+    "testimonial3": {
+      "text": "SereniApp simplifica mi vida como cuidadora de mi niño con TEA. Recomendaría esta aplicación a cualquier persona que busque mejorar el bienestar mental de los niños con TEA.",
+      "author": "María Rodríguez",
+      "title": "Cuidadora en SereniApp"
     },
-    "translation": {
-      "hero": {
-        "title": "SereniApp",
-        "description": "SereniApp, tanto en su versión web como móvil, está diseñada para los cuidadores de niños con TEA. Proporciona acceso a datos históricos de pulso y ubicación, permitiéndote revisar y analizar información pasada para un mejor entendimiento del bienestar de tus seres queridos. Con funciones avanzadas, podrás acceder a registros detallados y tomar decisiones informadas para garantizar su seguridad.",
-        "signupButton": "Regístrate",
-        "loginButton": "Inicia sesión"
+    "testimonial4": {
+      "text": "La integración de SereniTech-Band en la rutina diaria de mi hijo ha sido increíblemente beneficiosa. Es una maravilla tecnológica que ha mejorado significativamente su seguridad y bienestar.",
+      "author": "Carlos Pérez",
+      "title": "Padre de Usuario de SereniTech-Band"
+    },
+    "testimonial5": {
+      "text": "SereniApp ha superado mis expectativas. La variedad de recursos y la interfaz intuitiva la hacen excepcional para el cuidado de niños con TEA.",
+      "author": "Laura Gómez",
+      "title": "Cuidadora en SereniApp"
+    }
+  },
+  "faqdata": {
+    "faq1": {
+      "question": "¿La aplicación SereniApp es completamente gratuita?",
+      "answer": "Sí, SereniApp es completamente gratuita para los cuidadores de niños con Trastorno del Espectro Autista (TEA)."
+    },
+    "faq2": {
+      "question": "¿Cómo funciona SereniTech-Band en el monitoreo de personas con TEA?",
+      "answer": "SereniTech-Band utiliza tecnología innovadora para mejorar la seguridad y autonomía de las personas con Trastorno del Espectro Autista (TEA). Proporciona funciones avanzadas para el monitoreo constante y el bienestar general."
+    },
+    "faq3": {
+      "question": "¿Cuáles son las características clave de SereniTech-Band?",
+      "answer": "SereniTech-Band cuenta con un sensor de pulso para monitorear la salud, así como un sensor de ubicación para proporcionar información sobre la localización. Además, registra datos históricos para un análisis detallado."
+    },
+    "faq4": {
+      "question": "¿SereniTech-Band ofrece funcionalidades específicas para cuidadores?",
+      "answer": "Sí, SereniTech-Band proporciona a los cuidadores acceso a datos históricos de pulso y ubicación, permitiéndoles revisar información pasada para un mejor entendimiento del bienestar de las personas con TEA."
+    }
+  },
+  "cta": {
+    "title1": "¿Listo para probar SereniApp?",
+    "title2": "Regístrate ahora y mejora la experiencia de cuidado.",
+    "title3": "Registrarse"
+  },
+  "footer": {
+    "t1": "SereniApp es tu asistente personalizado en el cuidado de tus seres queridos con TEA. A través de avanzadas alertas y un monitoreo en tiempo real, podrás estar al tanto de su bienestar donde sea que estén, dándote la capacidad de responder ante cualquier situación para su mayor seguridad.",
+    "t2": "Volver arriba"
+  },
+  "popup": {
+    "error": "Error del cliente. Consulta la consola para obtener más información",
+    "t1": "Abrir contacto",
+    "t2": "¿Cómo te podemos ayudar?",
+    "t3": "Nombre completo:",
+    "t5": "Correo electrónico:",
+    "t8": "Su mensaje",
+    "t9": "Escriba su mensaje",
+    "t10": "Enviar mensaje",
+    "t11": "Mensaje enviado exitosamente",
+    "t12": "Volver",
+    "t13": "¡Ups, algo salió mal!"
+  },
+  "iniciar": {
+    "e1": "La contraseña debe tener al menos 8 caracteres.",
+    "e2": "Error al iniciar sesión",
+    "t1": "Contraseña:",
+    "t2": "Mínimo 8 caracteres",
+    "t3": "¿No tienes una cuenta?"
+  },
+  "registrar": {
+    "t1": "Las contraseñas no coinciden",
+    "t2": "Confirmar contraseña:",
+    "t3": "¿Ya tienes una cuenta?"
+  },
+  "navbar3": {
+    "pulso": "Pulso",
+    "gps": "GPS",
+    "cuenta": "Cuenta",
+    "cerrar": "Cerrar Sesión"
+  },
+  "accountSection": {
+    "pageTitle": "Cuenta",
+    "tabs": {
+      "name": {
+        "label": "Nombre",
+        "header": "Cambiar Nombre",
+        "newNameLabel": "Nuevo nombre:",
+        "newNamePlaceholder": "Ingresa el nuevo nombre",
+        "updateButton": "Actualizar Nombre"
+      },
+      "password": {
+        "label": "Contraseña",
+        "header": "Cambiar Contraseña",
+        "newPasswordLabel": "Nueva contraseña:",
+        "newPasswordPlaceholder": "Ingresa la nueva contraseña",
+        "confirmPasswordLabel": "Confirmar contraseña:",
+        "confirmPasswordPlaceholder": "Confirma la nueva contraseña",
+        "updateButton": "Actualizar Contraseña"
+      },
+      "delete": {
+        "label": "Eliminar",
+        "header": "Eliminar Cuenta",
+        "confirmationPlaceholder": "Escribe 'Eliminar Cuenta' para confirmar",
+        "deleteButton": "Confirmar Eliminación"
       }
+    },
+    "chipMessages": {
+      "successNameUpdate": "Nombre actualizado exitosamente.",
+      "errorNameUpdate": "Error al actualizar el nombre: ",
+      "passwordMismatch": "La nueva contraseña y la confirmación no coinciden.",
+      "successPasswordUpdate": "Contraseña actualizada exitosamente.",
+      "errorPasswordUpdate": "Error al actualizar la contraseña: ",
+      "incorrectConfirmationText": "Texto de confirmación incorrecto. Por favor, escribe 'Eliminar Cuenta'.",
+      "successAccountDelete": "Cuenta eliminada exitosamente.",
+      "errorAccountDelete": "Error al eliminar la cuenta: "
     }
   }
+}

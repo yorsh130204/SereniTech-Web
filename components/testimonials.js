@@ -12,34 +12,37 @@ import userFiveImg from '../public/img/user5.png';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+import { useTranslation } from 'react-i18next';
+
 const Testimonials = () => {
+  const { t } = useTranslation("translation");
   const testimonialsData = [
     {
-      text: 'SereniApp ha transformado la manera en que cuido a mi pequeño con TEA. Acceder a datos históricos de pulso y localización me brinda tranquilidad y me permite ofrecerle el mejor cuidado posible.',
-      author: 'Ana García',
-      title: 'Cuidadora en SereniApp',
+      text: t("testimonialsData.testimonial1.text"),
+      author: t("testimonialsData.testimonial1.author"),
+      title: t("testimonialsData.testimonial1.title"),
     },
     {
-      text: 'La tecnología de SereniTech-Band es una revolución para el cuidado de mi hijo con TEA. Me siento más conectado y seguro, sabiendo que su autonomía se ve fomentada con esta tecnología innovadora.',
-      author: 'Javier Martínez',
-      title: 'Padre de Usuario de SereniTech-Band',
+      text: t("testimonialsData.testimonial2.text"),
+      author: t("testimonialsData.testimonial2.author"),
+      title: t("testimonialsData.testimonial2.title"),
     },
     {
-      text: 'SereniApp simplifica mi vida como cuidadora de mi niño con TEA. Recomendaría esta aplicación a cualquier persona que busque mejorar el bienestar mental de los niños con TEA.',
-      author: 'María Rodríguez',
-      title: 'Cuidadora en SereniApp',
+      text: t("testimonialsData.testimonial3.text"),
+      author: t("testimonialsData.testimonial3.author"),
+      title: t("testimonialsData.testimonial3.title"),
     },
     {
-      text: 'La integración de SereniTech-Band en la rutina diaria de mi hijo ha sido increíblemente beneficiosa. Es una maravilla tecnológica que ha mejorado significativamente su seguridad y bienestar.',
-      author: 'Carlos Pérez',
-      title: 'Padre de Usuario de SereniTech-Band',
+      text: t("testimonialsData.testimonial4.text"),
+      author: t("testimonialsData.testimonial4.author"),
+      title: t("testimonialsData.testimonial4.title"),
     },
     {
-      text: 'SereniApp ha superado mis expectativas. La variedad de recursos y la interfaz intuitiva la hacen excepcional para el cuidado de niños con TEA.',
-      author: 'Laura Gómez',
-      title: 'Cuidadora en SereniApp',
+      text: t("testimonialsData.testimonial5.text"),
+      author: t("testimonialsData.testimonial5.author"),
+      title: t("testimonialsData.testimonial5.title"),
     },
-  ];  
+  ];   
 
   const [currentSlide, setCurrentSlide] = useState(0);
 

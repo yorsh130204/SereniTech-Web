@@ -10,7 +10,7 @@ import i18next from 'i18next'
 import { I18nextProvider } from 'react-i18next'
 
 i18next.init({
-  lng: "es",
+  fallbackLng: "es",
   interpolation: { escapeValue: false },
   resources: {
     en: {
