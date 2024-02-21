@@ -105,43 +105,43 @@ const AccountSection = () => {
                 </CardBody>
               </Card>
             </Tab>
-            <Tab key="password" title="Contraseña">
+            <Tab key="password" title={t("accountSection.tabs.password.label")}>
               <Card>
-                <CardHeader className="text-lg font-bold">Cambiar Contraseña</CardHeader>
+                <CardHeader className="text-lg font-bold">{t("accountSection.tabs.password.header")}</CardHeader>
                 <CardBody>
                   {/* Formulario para cambiar la contraseña con confirmación */}
                   <div>
-                    <label className="text-md">Nueva contraseña:</label>
+                    <label className="text-md">{t("accountSection.tabs.password.newPasswordLabel")}</label>
                     <Input
                       type="password"
                       className="mt-2 mb-4"
                       value={newPassword}
                       onChange={(e) => setNewPassword(e.target.value)}
-                      placeholder="Ingresa la nueva contraseña"
+                      placeholder={t("accountSection.tabs.password.newPasswordPlaceholder")}
                     />
-                    <label className="text-md mt-8">Confirmar contraseña:</label>
+                    <label className="text-md mt-8">{t("accountSection.tabs.password.confirmPasswordLabel")}</label>
                     <Input
                       type="password"
                       className="mt-2"
                       value={confirmPassword}
                       onChange={(e) => setConfirmPassword(e.target.value)}
-                      placeholder="Confirma la nueva contraseña"
+                      placeholder={t("accountSection.tabs.password.confirmPasswordPlaceholder")}
                     />
                     <Button onClick={handleUpdatePassword} className="mt-6">
-                      Actualizar Contraseña
+                    {t("accountSection.tabs.password.updateButton")}
                     </Button>
                   </div>
                 </CardBody>
               </Card>
             </Tab>
-            <Tab key="delete" title="Eliminar">
+            <Tab key="delete" title={t("accountSection.tabs.delete.label")}>
               <Card>
-                <CardHeader className="text-lg font-bold">Eliminar Cuenta</CardHeader>
+                <CardHeader className="text-lg font-bold">{t("accountSection.tabs.delete.header")}</CardHeader>
                 <CardBody>
                   {/* Input para confirmar la eliminación */}
                   <div className="mt-4">
                     <Input
-                      placeholder="Escribe 'Eliminar Cuenta' para confirmar"
+                      placeholder={t("accountSection.tabs.delete.confirmationPlaceholder")}
                       value={confirmationText}
                       onChange={(e) => setConfirmationText(e.target.value)}
                     />
@@ -150,7 +150,7 @@ const AccountSection = () => {
                   {/* Botón para eliminar la cuenta */}
                   <div className="mt-6">
                     <Button onClick={handleDeleteAccount} className="bg-red-500 hover:bg-red-600">
-                      Confirmar Eliminación
+                    {t("accountSection.tabs.delete.deleteButton")}
                     </Button>
                   </div>
                 </CardBody>

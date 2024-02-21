@@ -139,7 +139,7 @@ const Navbar = ({ onSelectSection }) => {
           </ul>
         </div>
 
-        <div className="hidden mr-3 space-x-4 lg:flex nav__item">
+        <div className="hidden mr-8 space-x-4 lg:flex nav__item">
           <User   
             name={userName}
             description={(
@@ -156,7 +156,7 @@ const Navbar = ({ onSelectSection }) => {
             {t("navbar3.cerrar")}
           </Button>
 
-          <ThemeChanger />
+          <ThemeChanger className="mr-12" />
         </div>
       </nav>
     </div>

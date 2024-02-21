@@ -31,7 +31,7 @@ const Navbar2 = () => {
           )}
         </Disclosure>
 
-        <div className="hidden mr-3 space-x-4 lg:flex nav__item">
+        <div className="hidden mr-3 space-x-4 lg:flex nav__item mr-8">
           <ThemeChanger />
         </div>
       </nav>
