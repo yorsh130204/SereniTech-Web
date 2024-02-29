@@ -23,38 +23,38 @@ const AccountSection = () => {
     try {
       await database.ref(`users/${currentUser.uid}`).update({ name: newName });
       await currentUser.updateProfile({ displayName: newName });
-      showChip(t("chipMessages.successNameUpdate"), 'success');
+      showChip(t("accountSection.chipMessages.successNameUpdate"), 'success');
     } catch (error) {
-      showChip(t("chipMessages.errorNameUpdate") + error.message, 'error');
+      showChip(t("accountSection.chipMessages.errorNameUpdate") + error.message, 'danger');
     }
   };
 
   const handleUpdatePassword = async () => {
     if (newPassword !== confirmPassword) {
-      showChip(t("chipMessages.passwordMismatch"), 'error');
+      showChip(t("accountSection.chipMessages.passwordMismatch"), 'danger');
       return;
     }
 
     try {
       await currentUser.updatePassword(newPassword);
-      showChip(t("chipMessages.successPasswordUpdate"), 'success');
+      showChip(t("accountSection.chipMessages.successPasswordUpdate"), 'success');
     } catch (error) {
-      showChip(t("chipMessages.errorPasswordUpdate") + error.message, 'error');
+      showChip(t("accountSection.chipMessages.errorPasswordUpdate") + error.message, 'danger');
     }
   };
 
   const handleDeleteAccount = async () => {
-    if (confirmationText.trim() !== t("delete.header")) {
-      showChip(t("chipMessages.incorrectConfirmationText"), 'error');
+    if (confirmationText.trim() !== t("accountSection.tabs.delete.header")) {
+      showChip(t("accountSection.chipMessages.incorrectConfirmationText"), 'danger');
       return;
     }
 
     try {
       await database.ref(`users/${currentUser.uid}`).remove();
       await currentUser.delete();
-      showChip(t("chipMessages.successAccountDelete"), 'success');
+      showChip(t("accountSection.chipMessages.successAccountDelete"), 'success');
     } catch (error) {
-      showChip(t("chipMessages.errorAccountDelete") + error.message, 'error');
+      showChip(t("accountSection.chipMessages.errorAccountDelete") + error.message, 'danger');
     }
   };
 
@@ -73,9 +73,7 @@ const AccountSection = () => {
     <Container className="flex flex-wrap justify-center mt-20">
       <div className="max-w-md w-full space-y-8">
         <h1 className="text-4xl font-bold text-center">{t("accountSection.pageTitle")}</h1>
-  
-        {/* Tabs para cambiar entre secciones */}
-        <div className="mx-auto max-w-md">
+          <div className="mx-auto max-w-md">
           <Tabs
             className="mx-auto rounded-md overflow-hidden"
             fullWidth
@@ -161,8 +159,8 @@ const AccountSection = () => {
   
         {/* Chip para mensajes flotantes */}
         {chipVisible && (
-          <div className="mt-4">
-            <Chip color={chipType}>{chipText}</Chip>
+          <div>
+            <Chip className={`bg-${chipType === 'danger' ? 'red-500' : 'green-500'} text-white`} size="md">{chipText}</Chip>
           </div>
         )}
       </div>
