@@ -95,7 +95,7 @@ const PulseSection = () => {
     <Container className="flex flex-wrap justify-center mt-20 pb-0">
       <div className="w-full">
         <h1 className="text-4xl font-bold text-center dark:text-gray-200">{t("pulse.title")}</h1>
-        <p className="text-gray-500 text-lg text-center mb- dark:text-gray-300">{t("pulse.subtitle")}</p>
+        <p className="text-gray-500 text-lg text-center mb-6 dark:text-gray-300">{t("pulse.subtitle")}</p>
         <div className="flex flex-row">
           {/* Gráfica */}
           <div className="mr-4" id="chart" ref={chartRef} style={{ width: '50%' }}></div>
