@@ -79,7 +79,7 @@ const PulseSection = () => {
           setPulsesData([]);
         }
       } catch (error) {
-        console.error("Error al cargar los datos de pulsaciones", error.message);
+        console.error(t("pulse.error"), error.message);
       }
     };
 
@@ -92,16 +92,16 @@ const PulseSection = () => {
   ];
 
   return (
-    <Container className="flex flex-wrap justify-center mt-20">
+    <Container className="flex flex-wrap justify-center mt-20 pb-0">
       <div className="w-full">
         <h1 className="text-4xl font-bold text-center dark:text-gray-200">{t("pulse.title")}</h1>
-        <p className="text-lg text-center mb-6 dark:text-gray-300">{t("pulse.subtitle")}</p>
+        <p className="text-gray-500 text-lg text-center mb- dark:text-gray-300">{t("pulse.subtitle")}</p>
         <div className="flex flex-row">
           {/* Gráfica */}
-          <div className="mr-4" id="chart" ref={chartRef} style={{ width: '50%', height: '100%' }}></div>
+          <div className="mr-4" id="chart" ref={chartRef} style={{ width: '50%' }}></div>
 
           {/* Tabla */}
-          <div style={{ width: "40%" }}>
+          <div style={{ width: "40%" }} className="max-h-[400px] overflow-y-auto">
           <Table aria-label="Pulse Data Table">
             <TableHeader>
               {tableColumns.map((column) => (
@@ -112,7 +112,7 @@ const PulseSection = () => {
               {pulsesData.map((row) => (
                 <TableRow key={row.key}>
                   {tableColumns.map((column) => (
-                    <TableCell className="text-lg dark:text-gray-300" key={column.key}>
+                    <TableCell className="text-gray-500 text-lg dark:text-gray-300" key={column.key}>
                       {column.key === 'timestamp' ? formatTimestamp(row[column.key]) : getKeyValue(row, column.key)}
                     </TableCell>
                   ))}

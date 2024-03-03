@@ -62,17 +62,28 @@ const AccountSection = () => {
     setChipText(message);
     setChipType(type);
     setChipVisible(true);
-    setTimeout(() => setChipVisible(false), 5000);
+    setTimeout(() => setChipVisible(false), 2000);
   };
 
   const handleTabChange = (tabKey) => {
     setActiveTab(tabKey);
   };
 
+  const getChipColorClass = () => {
+    if (chipType === 'danger') {
+      return 'bg-red-500';
+    } else if (chipType === 'success') {
+      return 'bg-green-500';
+    }
+    // Agrega más lógica según sea necesario para otros tipos
+    return '';
+  };
+
   return (
     <Container className="flex flex-wrap justify-center mt-20">
-      <div className="max-w-md w-full space-y-8">
-        <h1 className="text-4xl font-bold text-center">{t("accountSection.pageTitle")}</h1>
+      <div className="max-w-md w-full">
+        <h1 className="text-4xl font-bold text-center dark:text-gray-200">{t("accountSection.pageTitle")}</h1>
+        <p className="text-gray-500 text-lg text-center mb-10 dark:text-gray-300">{t("accountSection.pageSubtitle")}</p>
           <div className="mx-auto max-w-md">
           <Tabs
             className="mx-auto rounded-md overflow-hidden"
@@ -160,7 +171,7 @@ const AccountSection = () => {
         {/* Chip para mensajes flotantes */}
         {chipVisible && (
           <div>
-            <Chip className={`bg-${chipType === 'danger' ? 'red-500' : 'green-500'} text-white`} size="md">{chipText}</Chip>
+            <Chip className={`${getChipColorClass()} text-white`} size="md">{chipText}</Chip>
           </div>
         )}
       </div>

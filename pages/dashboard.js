@@ -5,19 +5,15 @@ import { useRouter } from 'next/router';
 import Navbar from '../components/dashboard/navbar3';
 import CustomHead from '../components/CustomHead';
 import dynamic from 'next/dynamic';
-
 const PulseSection = dynamic(() => import('../components/dashboard/pulse'), {
   ssr: false
 });
-
 const GpsSection = dynamic(() => import('../components/dashboard/gps'), {
   ssr: false
 });
-
 const AccountSection = dynamic(() => import('../components/dashboard/account'), {
   ssr: false
 });
-
 import LanguageButton from "../components/translate"
 
 const Dashboard = () => {

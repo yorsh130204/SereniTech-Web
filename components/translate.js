@@ -15,11 +15,11 @@ const LanguageButton = () => {
   return (
     <div className="fixed bottom-5 left-5 flex flex-col space-y-2">
       <button
-        className="bg-gray-500 rounded-full shadow-lg text-white p-3 flex items-center justify-center hover:bg-gray-600 focus:outline-none focus:bg-gray-600 focus:hover:bg-gray-500 transition duration-300"
+        className="bg-gray-500/70 rounded-full shadow-lg text-white p-3 flex items-center justify-center hover:bg-gray-600 focus:outline-none focus:bg-gray-600 focus:hover:bg-gray-500 transition duration-300"
         onClick={toggleLanguage}
       >
-        <Globe className="mr-3" />
-        <span className="font-semibold">
+        <Globe className="mr-3 text-white/90" />
+        <span className="font-semibold text-white/90">
           {i18n.language === 'en' ? 'En' : 'Es'}
         </span>
       </button>

@@ -170,6 +170,7 @@
     },
     "accountSection": {
       "pageTitle": "Account",
+      "pageSubtitle": "Manage your account information and settings",
       "tabs": {
         "name": {
           "label": "Name",
@@ -204,5 +205,25 @@
         "successAccountDelete": "Account deleted successfully.",
         "errorAccountDelete": "Error deleting account: "
       }
-    }                      
+  },
+  "pulse": {
+      "title": "Pulse",
+      "subtitle": "Real-time pulse monitoring",
+      "currentPulse": "Pulse:",
+      "lastUpdated": "Last updated:",
+      "error": "Error fetching pulse. Please try again."
+  },
+  "gps": {
+      "title": "GPS",
+      "subtitle": "Real-time Location",
+      "currentLocation": "Current Location:",
+      "lastUpdated": "Last Update:",
+      "error": "Error obtaining location. Please try again.",
+      "latitude": "Latitude:",
+      "longitude": "Longitude:",
+      "location": "Location",
+      "action": "Action",
+      "viewLocation": "View on Map",
+      "buttonText": "Text Button"
+  }               
 }

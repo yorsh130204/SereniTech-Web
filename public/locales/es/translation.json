@@ -170,6 +170,7 @@
   },
   "accountSection": {
     "pageTitle": "Cuenta",
+    "pageSubtitle": "Gestiona la información de tu cuenta y configuraciones",
     "tabs": {
       "name": {
         "label": "Nombre",
@@ -207,9 +208,22 @@
   },
   "pulse": {
       "title": "Pulso",
-      "subtitle": "Monitoreo de pulso en tiempo real",
-      "currentPulse": "Pulso:",
+      "subtitle": "Monitoreo en tiempo real del pulso",
+      "currentPulse": "Pulso actual:",
       "lastUpdated": "Última actualización:",
       "error": "Error al obtener el pulso. Por favor, inténtalo de nuevo."
+  },
+  "gps": {
+      "title": "GPS",
+      "subtitle": "Ubicación en tiempo real",
+      "currentLocation": "Ubicación actual:",
+      "lastUpdated": "Última actualización:",
+      "error": "Error al obtener la ubicación. Por favor, inténtalo de nuevo.",
+      "latitude": "Latitud:",
+      "longitude": "Longitud:",
+      "location": "Ubicación",
+      "action": "Acción",
+      "viewLocation": "Ver en Mapa",
+      "buttonText": "Botón de Texto"
   }
 }
