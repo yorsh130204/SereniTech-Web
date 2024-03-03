@@ -3,8 +3,11 @@ import Container from '../container';
 import ApexCharts from 'apexcharts';
 import ThemeChanger from "../DarkSwitch";
 import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, getKeyValue } from '@nextui-org/react';
+import { auth, database } from '../../config/firebase';
+import { useTranslation } from 'react-i18next';
 
 const PulseSection = () => {
+  const { t } = useTranslation("translation");
   const chartRef = useRef(null);
 
   const chartData = {
@@ -54,6 +57,7 @@ const PulseSection = () => {
 
   return (
     <Container className="flex flex-wrap justify-center mt-20">
+      <h1 className="text-4xl font-bold text-center">{t("accountSection.pageTitle")}</h1>
       <div className="w-full md:w-1/2 lg:w-1/3">
         <h2 className="text-center mb-4">Line Example</h2>
         <div id="chart" ref={chartRef}></div>

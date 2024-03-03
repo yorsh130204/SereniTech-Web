@@ -1,8 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import Container from '../container';
 import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, getKeyValue } from '@nextui-org/react';
+import { auth, database } from '../../config/firebase';
+import { useTranslation } from 'react-i18next';
 
 const PulseSection = () => {
+  const { t } = useTranslation("Translation")
   const chartRef = useRef(null);
 
   const chartData = {
@@ -46,6 +49,7 @@ const PulseSection = () => {
 
   return (
     <Container className="flex flex-wrap justify-center mt-20">
+      <h1 className="text-4xl font-bold text-center">{t("accountSection.pageTitle")}</h1>
       <Table aria-label="Example table with dynamic content" className="w-full md:w-1/2 lg:w-1/3">
         <TableHeader>
           {tableColumns.map((column) => (
