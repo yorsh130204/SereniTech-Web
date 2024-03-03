@@ -204,5 +204,12 @@
       "successAccountDelete": "Cuenta eliminada exitosamente.",
       "errorAccountDelete": "Error al eliminar la cuenta: "
     }
+  },
+  "pulse": {
+      "title": "Pulso",
+      "subtitle": "Monitoreo de pulso en tiempo real",
+      "currentPulse": "Pulso:",
+      "lastUpdated": "Última actualización:",
+      "error": "Error al obtener el pulso. Por favor, inténtalo de nuevo."
   }
 }

@@ -4,9 +4,20 @@ import { useAuth } from '../contexts/AuthContext';
 import { useRouter } from 'next/router';
 import Navbar from '../components/dashboard/navbar3';
 import CustomHead from '../components/CustomHead';
-import PulseSection from '../components/dashboard/pulse';
-import GpsSection from "../components/dashboard/gps";
-import AccountSection from "../components/dashboard/account";
+import dynamic from 'next/dynamic';
+
+const PulseSection = dynamic(() => import('../components/dashboard/pulse'), {
+  ssr: false
+});
+
+const GpsSection = dynamic(() => import('../components/dashboard/gps'), {
+  ssr: false
+});
+
+const AccountSection = dynamic(() => import('../components/dashboard/account'), {
+  ssr: false
+});
+
 import LanguageButton from "../components/translate"
 
 const Dashboard = () => {

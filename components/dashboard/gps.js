@@ -3,6 +3,7 @@ import Container from '../container';
 import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, getKeyValue } from '@nextui-org/react';
 import { auth, database } from '../../config/firebase';
 import { useTranslation } from 'react-i18next';
+import ApexCharts from 'apexcharts';
 
 const PulseSection = () => {
   const { t } = useTranslation("Translation")

@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+// pulse.js
+import React, { useEffect, useState, useRef } from 'react';
 import Container from '../container';
 import ApexCharts from 'apexcharts';
-import ThemeChanger from "../DarkSwitch";
 import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, getKeyValue } from '@nextui-org/react';
 import { auth, database } from '../../config/firebase';
 import { useTranslation } from 'react-i18next';
@@ -9,77 +9,127 @@ import { useTranslation } from 'react-i18next';
 const PulseSection = () => {
   const { t } = useTranslation("translation");
   const chartRef = useRef(null);
-
-  const chartData = {
-    series: [{
-      name: 'My First dataset',
-      data: [65, 59, 80, 81, 56, 55, 40]
-    }],
-    options: {
-      chart: {
-        type: 'line'
-      },
-      xaxis: {
-        categories: ['January', 'February', 'March', 'April', 'May', 'June', 'July']
-      }
-    }
-  };
-
-  const tableColumns = [
-    { key: 'label', label: 'Month' },
-    { key: 'data', label: 'Data' },
-  ];
-
-  const tableRows = chartData.options.xaxis.categories.map((label, index) => ({
-    id: index + 1,
-    label,
-    data: chartData.series[0].data[index],
-  }));
+  const [pulsesData, setPulsesData] = useState([]);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const options = {
-        chart: {
-          type: 'line'
-        },
-        series: chartData.series,
-        xaxis: chartData.options.xaxis
-      };
+    const fetchData = async () => {
+      try {
+        const currentUser = auth.currentUser;
+        const pulsesRef = database.ref(`users/${currentUser.uid}/pulse`);
+        const pulsesSnapshot = await pulsesRef.get();
 
-      const chart = new ApexCharts(chartRef.current, options);
-      chart.render();
+        if (pulsesSnapshot.exists()) {
+          const pulsesData = pulsesSnapshot.val();
+          const allPulses = Object.keys(pulsesData).map(key => ({
+            key,
+            valor: pulsesData[key].valor,
+            timestamp: pulsesData[key].timestamp,
+          }));
 
-      return () => {
-        chart.destroy();
-      };
-    }
+          // Ordenar todas las pulsaciones por timestamp de forma descendente
+          allPulses.sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
+
+          setPulsesData(allPulses);
+
+          // Configuración del gráfico con los datos
+          const options = {
+            chart: {
+              type: 'line',
+              foreColor: '#6B7280', // Color de la leyenda
+            },
+            series: [{
+              name: t("pulse.title"),
+              data: allPulses.map(pulse => pulse.valor),
+            }],
+            xaxis: {
+              categories: allPulses.map(pulse => formatTimestamp(pulse.timestamp)),
+              labels: {
+                style: {
+                  colors: '#9CA3AF', // Color de las etiquetas del eje x
+                },
+              },
+              tickPlacement: 'between',
+            },
+            yaxis: {
+              labels: {
+                style: {
+                  colors: '#9CA3AF', // Color de las etiquetas del eje y
+                },
+              },
+            },
+            grid: {
+              borderColor: '#D1D5DB', // Color del borde de la cuadrícula
+            },
+            colors: ["#FF1654"], // Color de la línea del gráfico
+            tooltip: {
+              theme: 'dark', // Tema oscuro para el tooltip
+            },
+            markers: {
+              size: 6, // Tamaño de los marcadores en el gráfico
+              colors: "#ffffff", // Color de los marcadores
+              strokeColors: '#FF1654', // Color del borde de los marcadores
+              strokeWidth: 2, // Ancho del borde de los marcadores
+            },
+          };
+
+          const chart = new ApexCharts(chartRef.current, options);
+          chart.render();
+
+        } else {
+          setPulsesData([]);
+        }
+      } catch (error) {
+        console.error("Error al cargar los datos de pulsaciones", error.message);
+      }
+    };
+
+    fetchData();
   }, []);
+
+  const tableColumns = [
+    { key: 'timestamp', label: t("pulse.lastUpdated") },
+    { key: 'valor', label: t("pulse.currentPulse") },
+  ];
 
   return (
     <Container className="flex flex-wrap justify-center mt-20">
-      <h1 className="text-4xl font-bold text-center">{t("accountSection.pageTitle")}</h1>
-      <div className="w-full md:w-1/2 lg:w-1/3">
-        <h2 className="text-center mb-4">Line Example</h2>
-        <div id="chart" ref={chartRef}></div>
-      </div>
-      <Table aria-label="Example table with dynamic content" className="w-full md:w-1/2 lg:w-1/3">
-        <TableHeader>
-          {tableColumns.map((column) => (
-            <TableColumn key={column.key}>{column.label}</TableColumn>
-          ))}
-        </TableHeader>
-        <TableBody>
-          {tableRows.map((row) => (
-            <TableRow key={row.id}>
+      <div className="w-full">
+        <h1 className="text-4xl font-bold text-center dark:text-gray-200">{t("pulse.title")}</h1>
+        <p className="text-lg text-center mb-6 dark:text-gray-300">{t("pulse.subtitle")}</p>
+        <div className="flex flex-row">
+          {/* Gráfica */}
+          <div className="mr-4" id="chart" ref={chartRef} style={{ width: '50%', height: '100%' }}></div>
+
+          {/* Tabla */}
+          <div style={{ width: "40%" }}>
+          <Table aria-label="Pulse Data Table">
+            <TableHeader>
               {tableColumns.map((column) => (
-                <TableCell key={column.key}>{getKeyValue(row, column.key)}</TableCell>
+                <TableColumn className="text-xl dark:text-gray-200" key={column.key}>{column.label}</TableColumn>
               ))}
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+            </TableHeader>
+            <TableBody>
+              {pulsesData.map((row) => (
+                <TableRow key={row.key}>
+                  {tableColumns.map((column) => (
+                    <TableCell className="text-lg dark:text-gray-300" key={column.key}>
+                      {column.key === 'timestamp' ? formatTimestamp(row[column.key]) : getKeyValue(row, column.key)}
+                    </TableCell>
+                  ))}
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+          </div>
+        </div>
+      </div>
     </Container>
   );
 }
+
+const formatTimestamp = (timestamp) => {
+  const date = new Date(timestamp);
+  return `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
+};
 
 export default PulseSection;
