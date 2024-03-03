@@ -102,24 +102,24 @@ const PulseSection = () => {
 
           {/* Tabla */}
           <div style={{ width: "40%" }} className="max-h-[400px] overflow-y-auto">
-          <Table aria-label="Pulse Data Table">
-            <TableHeader>
-              {tableColumns.map((column) => (
-                <TableColumn className="text-xl dark:text-gray-200" key={column.key}>{column.label}</TableColumn>
-              ))}
-            </TableHeader>
-            <TableBody>
-              {pulsesData.map((row) => (
-                <TableRow key={row.key}>
-                  {tableColumns.map((column) => (
-                    <TableCell className="text-gray-500 text-lg dark:text-gray-300" key={column.key}>
-                      {column.key === 'timestamp' ? formatTimestamp(row[column.key]) : getKeyValue(row, column.key)}
-                    </TableCell>
-                  ))}
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
+            <Table aria-label="Pulse Data Table" className="border border-gray-50 rounded-2xl shadow-md">
+              <TableHeader>
+                {tableColumns.map((column) => (
+                  <TableColumn className="text-xl dark:text-gray-200" key={column.key}>{column.label}</TableColumn>
+                ))}
+              </TableHeader>
+              <TableBody>
+                {pulsesData.map((row) => (
+                  <TableRow key={row.key} className={row.valor > 100 ? 'bg-red-300 rounded-lg' : ''}>
+                    {tableColumns.map((column) => (
+                      <TableCell className='text-gray-500 text-lg dark:text-gray-300' key={column.key}>
+                        {column.key === 'timestamp' ? formatTimestamp(row[column.key]) : getKeyValue(row, column.key)}
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
           </div>
         </div>
       </div>

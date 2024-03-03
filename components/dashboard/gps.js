@@ -97,7 +97,7 @@ const GPSScreen = () => {
         <div>
           {/* Tabla */}
           <div className="w-2/3 mx-auto max-h-[400px] overflow-y-auto">
-            <Table aria-label="GPS Data Table">
+            <Table aria-label="GPS Data Table" className="border border-gray-50 rounded-2xl shadow-xl">
               <TableHeader>
                 {tableColumns.map((column) => (
                   <TableColumn className="text-xl dark:text-gray-200" key={column.key}>{column.label}</TableColumn>
