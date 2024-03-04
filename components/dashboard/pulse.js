@@ -96,13 +96,13 @@ const PulseSection = () => {
       <div className="w-full">
         <h1 className="text-4xl font-bold text-center dark:text-gray-200">{t("pulse.title")}</h1>
         <p className="text-gray-500 text-lg text-center mb-6 dark:text-gray-300">{t("pulse.subtitle")}</p>
-        <div className="flex flex-row">
+        <div className="flex flex-col md:flex-row items-center">
           {/* Gráfica */}
-          <div className="mr-4" id="chart" ref={chartRef} style={{ width: '50%' }}></div>
+          <div className="mb-4 md:mr-4 md:mb-0 w-full md:w-1/2" id="chart" ref={chartRef}></div>
 
           {/* Tabla */}
-          <div style={{ width: "40%" }} className="max-h-[400px] overflow-y-auto">
-            <Table aria-label="Pulse Data Table" className="border border-gray-50 rounded-2xl shadow-md">
+          <div className="w-full md:w-1/2">
+            <Table aria-label="Pulse Data Table" className="border border-gray-50 rounded-2xl shadow-md w-full md:max-w-md lg:max-w-lg">
               <TableHeader>
                 {tableColumns.map((column) => (
                   <TableColumn className="text-xl dark:text-gray-200" key={column.key}>{column.label}</TableColumn>

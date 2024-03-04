@@ -94,26 +94,23 @@ const GPSScreen = () => {
       <div className="w-full">
         <h1 className="text-4xl font-bold text-center dark:text-gray-200">{t("gps.title")}</h1>
         <p className="text-gray-500 text-lg text-center mb-6 dark:text-gray-300">{t("gps.subtitle")}</p>
-        <div>
-          {/* Tabla */}
-          <div className="w-2/3 mx-auto max-h-[400px] overflow-y-auto">
-            <Table aria-label="GPS Data Table" className="border border-gray-50 rounded-2xl shadow-xl">
-              <TableHeader>
-                {tableColumns.map((column) => (
-                  <TableColumn className="text-xl dark:text-gray-200" key={column.key}>{column.label}</TableColumn>
-                ))}
-              </TableHeader>
-              <TableBody>
-                {tableRows.map((row) => (
-                  <TableRow key={row.id}>
-                    {tableColumns.map((column) => (
-                      <TableCell className="text-gray-500 text-lg dark:text-gray-300" key={column.key}>{getKeyValue(row, column.key)}</TableCell>
-                    ))}
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </div>
+        <div className="w-full overflow-x-auto">
+          <Table aria-label="GPS Data Table" className="border border-gray-50 rounded-2xl shadow-xl w-full sm:w-2/3 mx-auto">
+            <TableHeader>
+              {tableColumns.map((column) => (
+                <TableColumn className="text-xl dark:text-gray-200" key={column.key}>{column.label}</TableColumn>
+              ))}
+            </TableHeader>
+            <TableBody>
+              {tableRows.map((row) => (
+                <TableRow key={row.id}>
+                  {tableColumns.map((column) => (
+                    <TableCell className="text-gray-500 text-lg dark:text-gray-300" key={column.key}>{getKeyValue(row, column.key)}</TableCell>
+                  ))}
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
         </div>
       </div>
     </Container>
