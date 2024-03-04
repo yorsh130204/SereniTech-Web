@@ -1,5 +1,5 @@
 import React from 'react';
-import { AcademicCapIcon } from "@heroicons/react/24/solid";
+import { UserIcon } from "@heroicons/react/24/solid";
 import Container from "./container";
 import { useTranslation } from 'react-i18next';
 
@@ -12,25 +12,25 @@ const AboutUsSection = () => {
       name: t("teamMembers.e1.name"),
       role: t("teamMembers.e1.role"),
       description: t("teamMembers.e1.description"),
-      icon: <AcademicCapIcon className="w-12 h-12 text-gray-700" />,
+      icon: <UserIcon className="w-12 h-12 text-gray-700" />,
     },
     {
       name: t("teamMembers.e2.name"),
       role: t("teamMembers.e2.role"),
       description: t("teamMembers.e2.description"),
-      icon: <AcademicCapIcon className="w-12 h-12 text-gray-700" />,
+      icon: <UserIcon className="w-12 h-12 text-gray-700" />,
     },
     {
       name: t("teamMembers.e3.name"),
       role: t("teamMembers.e3.role"),
       description: t("teamMembers.e3.description"),
-      icon: <AcademicCapIcon className="w-12 h-12 text-gray-700" />,
+      icon: <UserIcon className="w-12 h-12 text-gray-700" />,
     },
     {
       name: t("teamMembers.e4.name"),
       role: t("teamMembers.e4.role"),
       description: t("teamMembers.e4.description"),
-      icon: <AcademicCapIcon className="w-12 h-12 text-gray-700" />,
+      icon: <UserIcon className="w-12 h-12 text-gray-700" />,
     },
   ];
 
